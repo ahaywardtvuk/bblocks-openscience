@@ -1,10 +1,10 @@
-Validation report for ogc.osc.geodcat-stac-earthcode.products - EarthCODE Product
-Generated 2025-12-01T15:21:42.268983+00:00
+Validation report for ogc.osc.geodcat-stac-earthcode.experiments - EarthCODE Experiment
+Generated 2025-12-01T15:21:33.966945+00:00
 === Files ===
-Using valid-cf-parameters.json from test resources
+Using example_3_1.json from examples
 JSON-LD context is present - uplifting
-Output JSON-LD valid-cf-parameters.jsonld created
-Output Turtle valid-cf-parameters.ttl created
+Output JSON-LD example_3_1.jsonld created
+Output Turtle example_3_1.ttl created
 === End Files ===
 
 === JSON Schema ===
