@@ -259,22 +259,14 @@ This building block shows a possible profile of GeoDCAT supporting semantic anno
             dcterms:format "application/json" ;
             ns1:relation <http://www.iana.org/assignments/relation/root> ;
             oa:hasTarget <https://ogc.org/catalog.json> ],
-        [ rdfs:label "POLARIS" ;
-            dcterms:format "application/json" ;
-            ns1:relation <http://www.iana.org/assignments/relation/child> ;
-            oa:hasTarget <https://ogc.org/products/polaris/collection.json> ],
-        [ rdfs:label "Execution environment" ;
-            dcterms:format "application/yaml" ;
-            ns1:relation <http://www.iana.org/assignments/relation/environment> ;
-            oa:hasTarget <https://ogc.org/demo/ospd/environment.yaml> ],
         [ rdfs:label "Input parameters" ;
             dcterms:format "application/yaml" ;
             ns1:relation <http://www.iana.org/assignments/relation/input> ;
             oa:hasTarget <https://ogc.org/demo/ospd/input.yaml> ],
-        [ rdfs:label "Theme: Oceans" ;
+        [ rdfs:label "POLARIS" ;
             dcterms:format "application/json" ;
-            ns1:relation <http://www.iana.org/assignments/relation/related> ;
-            oa:hasTarget <https://ogc.org/themes/oceans/catalog.json> ],
+            ns1:relation <http://www.iana.org/assignments/relation/child> ;
+            oa:hasTarget <https://ogc.org/products/polaris/collection.json> ],
         [ dcterms:format "application/json" ;
             ns1:relation <http://www.iana.org/assignments/relation/self> ;
             oa:hasTarget <https://esa-earthcode.github.io/open-science-catalog-metadata/experiments/polaris-experiment/item.json> ],
@@ -282,6 +274,14 @@ This building block shows a possible profile of GeoDCAT supporting semantic anno
             dcterms:format "application/json" ;
             ns1:relation <http://www.iana.org/assignments/relation/parent> ;
             oa:hasTarget <https://ogc.org/demo/catalog.json> ],
+        [ rdfs:label "Theme: Oceans" ;
+            dcterms:format "application/json" ;
+            ns1:relation <http://www.iana.org/assignments/relation/related> ;
+            oa:hasTarget <https://ogc.org/themes/oceans/catalog.json> ],
+        [ rdfs:label "Execution environment" ;
+            dcterms:format "application/yaml" ;
+            ns1:relation <http://www.iana.org/assignments/relation/environment> ;
+            oa:hasTarget <https://ogc.org/demo/ospd/environment.yaml> ],
         [ rdfs:label "Workflow: POLARIS" ;
             dcterms:format "application/json" ;
             ns1:relation <http://www.iana.org/assignments/relation/related> ;
@@ -543,14 +543,7 @@ This building block shows a possible profile of GeoDCAT supporting semantic anno
 
 <https://ogc.org/demo/ospd/water-bodies-execution> a geojson:Feature ;
     dcterms:conformsTo <http://www.opengis.net/spec/ogcapi-records-1/1.0/req/record-core> ;
-    rdfs:seeAlso [ rdfs:label "Water Bodies Execution Outputs" ;
-            dcterms:format "application/json" ;
-            ns1:relation <http://www.iana.org/assignments/relation/child> ;
-            oa:hasTarget <https://example.com/open-science-catalog-metadata/products/water-bodies-execution-outputs/collection.json> ],
-        [ dcterms:format "application/json" ;
-            ns1:relation <http://www.iana.org/assignments/relation/self> ;
-            oa:hasTarget <https://example.com/open-science-catalog-metadata/experiments/water-bodies-execution/record.json> ],
-        [ rdfs:label "Open Science Catalog" ;
+    rdfs:seeAlso [ rdfs:label "Open Science Catalog" ;
             dcterms:format "application/json" ;
             ns1:relation <http://www.iana.org/assignments/relation/root> ;
             oa:hasTarget <https://example.com/open-science-catalog-metadata/catalog.json> ],
@@ -558,6 +551,17 @@ This building block shows a possible profile of GeoDCAT supporting semantic anno
             dcterms:format "application/json" ;
             ns1:relation <http://www.iana.org/assignments/relation/related> ;
             oa:hasTarget <https://example.com/open-science-catalog-metadata/themes/land/catalog.json> ],
+        [ rdfs:label "Water Bodies Execution Outputs" ;
+            dcterms:format "application/json" ;
+            ns1:relation <http://www.iana.org/assignments/relation/child> ;
+            oa:hasTarget <https://example.com/open-science-catalog-metadata/products/water-bodies-execution-outputs/collection.json> ],
+        [ dcterms:format "application/json" ;
+            ns1:relation <http://www.iana.org/assignments/relation/self> ;
+            oa:hasTarget <https://example.com/open-science-catalog-metadata/experiments/water-bodies-execution/record.json> ],
+        [ rdfs:label "Experiments" ;
+            dcterms:format "application/json" ;
+            ns1:relation <http://www.iana.org/assignments/relation/parent> ;
+            oa:hasTarget <https://example.com/open-science-catalog-metadata/experiments/catalog.json> ],
         [ rdfs:label "Workflow: Water Bodies" ;
             dcterms:format "application/json" ;
             ns1:relation <http://www.iana.org/assignments/relation/related> ;
@@ -565,27 +569,23 @@ This building block shows a possible profile of GeoDCAT supporting semantic anno
         [ rdfs:label "An EO data exploitation platform" ;
             dcterms:format "application/json" ;
             ns1:relation <http://www.iana.org/assignments/relation/service> ;
-            oa:hasTarget <https://example.com> ],
-        [ rdfs:label "Experiments" ;
-            dcterms:format "application/json" ;
-            ns1:relation <http://www.iana.org/assignments/relation/parent> ;
-            oa:hasTarget <https://example.com/open-science-catalog-metadata/experiments/catalog.json> ] ;
+            oa:hasTarget <https://example.com> ] ;
     :properties [ a :experiment ;
             dcterms:created "2025-01-21T18:00:00Z" ;
             dcterms:description "Experiment using the water bodies workflow." ;
             dcterms:modified "2025-01-21T18:40:00Z" ;
             dcterms:title "ESA WorldCereal Experiment" ;
-            dcat:contactPoint [ :contactInstructions "SEE WEBSITE" ;
+            dcat:contactPoint [ :contactInstructions "Contact via website" ;
+                    :name "A person" ;
+                    :organization "An Org" ;
+                    :position "Researcher" ;
+                    stac:roles "principal investigator" ],
+                [ :contactInstructions "SEE WEBSITE" ;
                     :links [ dcterms:type "text/html" ;
                             ns1:relation <http://www.iana.org/assignments/relation/about> ;
                             oa:hasTarget <https://example.com/> ] ;
                     :name "An Org" ;
-                    stac:roles "processor" ],
-                [ :contactInstructions "Contact via website" ;
-                    :name "A person" ;
-                    :organization "An Org" ;
-                    :position "Researcher" ;
-                    stac:roles "principal investigator" ] ;
+                    stac:roles "processor" ] ;
             dcat:license "proprietary" ;
             :version "2" ;
             rec:format [ rec:name "GeoTIFF" ] ;
@@ -598,6 +598,24 @@ This building block shows a possible profile of GeoDCAT supporting semantic anno
 
 
 ### The water bodies experiment with some provenance data attached
+This describes an execution of the water bodies example workflow included in the workflows EarthCODE
+bblock.
+
+Some notes:
+  - The 'prov' property contains the provenance data because the current schemas won't allow it to
+    be at the top level or inside `properties` due to a clash in the `type` field.
+  - The wfprov:usedInput is nearer to a natural representation of the inputs than plain PROV's
+    qualifiedUsage. However, there is no equivalent wfprov:generatedOutput, which makes it difficult
+    to say that the output is a STAC Collection and that it was the stac_catalog output parameter.
+    If you wish to track quality/fit metrics as you develop a workflow or product then a
+    wfprov:producedOutput with a describedByParameter might have been useful.
+  - hadMember for the stac_items parameter indicates that this is not a string literal input but an
+    array of URIs for input entities.
+  - The outputs being a child is required in EarthCODE but this constrains catalogue structure
+    and results in STAC entities with multiple parents. It doesn't seem fundamentally necessary.
+  - Very little runtime information is given, cwltool --provenance emits very little and wf4ever
+    doesn't provide a way to represent it. eg, OS, total memory, etc, that are relevant to knowing
+    if an experiment can feasibly be repeated.
 #### json
 ```json
 {
@@ -610,9 +628,6 @@ This building block shows a possible profile of GeoDCAT supporting semantic anno
 
   "properties": {
     "prov": {
-      "_comment": "This mocks up provenance information for the water bodies execution, first with plain prov then with wf4ever.",
-
-
       "id": "water-bodies-execution",
       "provType": [
         "Activity",
@@ -631,79 +646,7 @@ This building block shows a possible profile of GeoDCAT supporting semantic anno
         }
       ],
 
-      "qualifiedUsage": [
-        {
-          "type": "Usage",
-          "entity": {
-            "id": "ogc-api-inputs",
-            "type": ["Entity", "wfprov:Artifact"],
-            "data": {
-              "stac_items": [
-                "https://earth-search.aws.element84.com/v0/collections/sentinel-s2-l2a-cogs/items/S2B_10TFK_20210713_0_L2A",
-                "https://earth-search.aws.element84.com/v0/collections/sentinel-s2-l2a-cogs/items/S2A_10TFK_20220524_0_L2A"
-              ],
-              "aoi": "-121.399,39.834,-120.74,40.472",
-              "epsg": "EPSG:4326",
-              "bands": [
-                "green",
-                "nir"
-              ]
-            }
-          },
-          "role": "Processes API inputs"
-        },
-        {
-          "type": "Usage",
-          "entity": {
-            "id": "aoi",
-            "type": ["Entity", "wfprov:Artifact"],
-            "data": "-121.399,39.834,-120.74,40.472"
-          },
-          "role": "https://example.com/workflows/water-bodies/record.json#main/aoi"
-        },
-        {
-          "type": "Usage",
-          "entity": {
-            "id": "stac_items",
-            "type": ["Entity", "wfprov:Artifact"],
-            "hadMember": [
-              "https://earth-search.aws.element84.com/v0/collections/sentinel-s2-l2a-cogs/items/S2B_10TFK_20210713_0_L2A",
-              "https://earth-search.aws.element84.com/v0/collections/sentinel-s2-l2a-cogs/items/S2A_10TFK_20220524_0_L2A"
-            ]
-          },
-          "role": "https://example.com/workflows/water-bodies/record.json#main/stac_items"
-        },
-        {
-          "type": "Usage",
-          "entity": {
-            "id": "epsg",
-            "type": ["Entity", "wfprov:Artifact"],
-            "data": "EPSG:4326"
-          },
-          "role": "https://example.com/workflows/water-bodies/record.json#main/epsg"
-        },
-        {
-          "type": "Usage",
-          "entity": {
-            "id": "bands",
-            "type": ["Entity", "prov:Collection", "wfprov:Artifact"],
-            "hadMember": [
-              {
-                "value": "green"
-              },
-              {
-                "value": "nir"
-              }
-            ]
-          },
-          "role": "https://example.com/workflows/water-bodies/record.json#main/bands"
-        }
-      ],
-
-      "generated": [
-        "https://example.com/products/water-bodies/collection.json"
-      ],
-
+      "generated": "https://example.com/open-science-catalog-metadata/products/water-bodies-execution-outputs/collection.json",
 
       
       "wfprov:describedByWorkflow": "https://example.com/workflows/waterbodies/record.json",
@@ -852,7 +795,6 @@ This building block shows a possible profile of GeoDCAT supporting semantic anno
   "geometry": null,
   "properties": {
     "prov": {
-      "_comment": "This mocks up provenance information for the water bodies execution, first with plain prov then with wf4ever.",
       "id": "water-bodies-execution",
       "provType": [
         "Activity",
@@ -870,93 +812,7 @@ This building block shows a possible profile of GeoDCAT supporting semantic anno
           }
         }
       ],
-      "qualifiedUsage": [
-        {
-          "type": "Usage",
-          "entity": {
-            "id": "ogc-api-inputs",
-            "type": [
-              "Entity",
-              "wfprov:Artifact"
-            ],
-            "data": {
-              "stac_items": [
-                "https://earth-search.aws.element84.com/v0/collections/sentinel-s2-l2a-cogs/items/S2B_10TFK_20210713_0_L2A",
-                "https://earth-search.aws.element84.com/v0/collections/sentinel-s2-l2a-cogs/items/S2A_10TFK_20220524_0_L2A"
-              ],
-              "aoi": "-121.399,39.834,-120.74,40.472",
-              "epsg": "EPSG:4326",
-              "bands": [
-                "green",
-                "nir"
-              ]
-            }
-          },
-          "role": "Processes API inputs"
-        },
-        {
-          "type": "Usage",
-          "entity": {
-            "id": "aoi",
-            "type": [
-              "Entity",
-              "wfprov:Artifact"
-            ],
-            "data": "-121.399,39.834,-120.74,40.472"
-          },
-          "role": "https://example.com/workflows/water-bodies/record.json#main/aoi"
-        },
-        {
-          "type": "Usage",
-          "entity": {
-            "id": "stac_items",
-            "type": [
-              "Entity",
-              "wfprov:Artifact"
-            ],
-            "hadMember": [
-              "https://earth-search.aws.element84.com/v0/collections/sentinel-s2-l2a-cogs/items/S2B_10TFK_20210713_0_L2A",
-              "https://earth-search.aws.element84.com/v0/collections/sentinel-s2-l2a-cogs/items/S2A_10TFK_20220524_0_L2A"
-            ]
-          },
-          "role": "https://example.com/workflows/water-bodies/record.json#main/stac_items"
-        },
-        {
-          "type": "Usage",
-          "entity": {
-            "id": "epsg",
-            "type": [
-              "Entity",
-              "wfprov:Artifact"
-            ],
-            "data": "EPSG:4326"
-          },
-          "role": "https://example.com/workflows/water-bodies/record.json#main/epsg"
-        },
-        {
-          "type": "Usage",
-          "entity": {
-            "id": "bands",
-            "type": [
-              "Entity",
-              "prov:Collection",
-              "wfprov:Artifact"
-            ],
-            "hadMember": [
-              {
-                "value": "green"
-              },
-              {
-                "value": "nir"
-              }
-            ]
-          },
-          "role": "https://example.com/workflows/water-bodies/record.json#main/bands"
-        }
-      ],
-      "generated": [
-        "https://example.com/products/water-bodies/collection.json"
-      ],
+      "generated": "https://example.com/open-science-catalog-metadata/products/water-bodies-execution-outputs/collection.json",
       "wfprov:describedByWorkflow": "https://example.com/workflows/waterbodies/record.json",
       "wfprov:wasEnactedBy": {
         "id": "eo-data-platform",
@@ -1098,10 +954,10 @@ This building block shows a possible profile of GeoDCAT supporting semantic anno
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix geojson: <https://purl.org/geojson/vocab#> .
-@prefix ns1: <wfprov:> .
+@prefix ns1: <osc:> .
 @prefix ns2: <http://www.iana.org/assignments/> .
-@prefix ns3: <osc:> .
-@prefix ns4: <prov:> .
+@prefix ns3: <prov:> .
+@prefix ns4: <wfprov:> .
 @prefix oa: <http://www.w3.org/ns/oa#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix rec: <https://www.opengis.net/def/ogc-api/records/> .
@@ -1109,71 +965,42 @@ This building block shows a possible profile of GeoDCAT supporting semantic anno
 @prefix thns: <https://w3id.org/ogc/stac/themes/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://ogc.org/demo/ospd/aoi> a :Entity,
-        ns1:Artifact ;
-    :data "-121.399,39.834,-120.74,40.472" .
-
-<https://ogc.org/demo/ospd/bands> a :Entity,
-        ns4:Collection,
-        ns1:Artifact ;
-    :hadMember [ :value "nir" ],
-        [ :value "green" ] .
-
-<https://ogc.org/demo/ospd/eo-data-platform> a ns4:Agent,
-        ns4:SoftwareAgent,
-        ns1:WorkfowEngine ;
-    ns4:label "cwltool 3.1.20251031082601" .
-
-<https://ogc.org/demo/ospd/epsg> a :Entity,
-        ns1:Artifact ;
-    :data "EPSG:4326" .
-
-<https://ogc.org/demo/ospd/ogc-api-inputs> a :Entity,
-        ns1:Artifact ;
-    :data [ :aoi "-121.399,39.834,-120.74,40.472" ;
-            :bands "green",
-                "nir" ;
-            :epsg "EPSG:4326" ;
-            :stac_items "https://earth-search.aws.element84.com/v0/collections/sentinel-s2-l2a-cogs/items/S2A_10TFK_20220524_0_L2A",
-                "https://earth-search.aws.element84.com/v0/collections/sentinel-s2-l2a-cogs/items/S2B_10TFK_20210713_0_L2A" ] .
-
-<https://ogc.org/demo/ospd/stac_items> a :Entity,
-        ns1:Artifact ;
-    :hadMember "https://earth-search.aws.element84.com/v0/collections/sentinel-s2-l2a-cogs/items/S2A_10TFK_20220524_0_L2A",
-        "https://earth-search.aws.element84.com/v0/collections/sentinel-s2-l2a-cogs/items/S2B_10TFK_20210713_0_L2A" .
+<https://ogc.org/demo/ospd/eo-data-platform> a ns3:Agent,
+        ns3:SoftwareAgent,
+        ns4:WorkfowEngine ;
+    ns3:label "cwltool 3.1.20251031082601" .
 
 <https://ogc.org/demo/ospd/water-bodies-execution> a geojson:Feature ;
     dcterms:conformsTo <http://www.opengis.net/spec/ogcapi-records-1/1.0/req/record-core> ;
-    rdfs:seeAlso [ rdfs:label "Theme: Land" ;
-            dcterms:format "application/json" ;
-            ns2:relation <http://www.iana.org/assignments/relation/related> ;
-            oa:hasTarget <https://example.com/open-science-catalog-metadata/themes/land/catalog.json> ],
-        [ rdfs:label "Workflow: Water Bodies" ;
+    rdfs:seeAlso [ rdfs:label "Workflow: Water Bodies" ;
             dcterms:format "application/json" ;
             ns2:relation <http://www.iana.org/assignments/relation/related> ;
             oa:hasTarget <https://example.com/open-science-catalog-metadata/workflows/waterbodies/record.json> ],
-        [ dcterms:format "application/json" ;
-            ns2:relation <http://www.iana.org/assignments/relation/self> ;
-            oa:hasTarget <https://example.com/open-science-catalog-metadata/experiments/water-bodies-execution/record.json> ],
-        [ rdfs:label "Water Bodies Execution Outputs" ;
+        [ rdfs:label "Theme: Land" ;
             dcterms:format "application/json" ;
-            ns2:relation <http://www.iana.org/assignments/relation/child> ;
-            oa:hasTarget <https://example.com/open-science-catalog-metadata/products/water-bodies-execution-outputs/collection.json> ],
+            ns2:relation <http://www.iana.org/assignments/relation/related> ;
+            oa:hasTarget <https://example.com/open-science-catalog-metadata/themes/land/catalog.json> ],
         [ rdfs:label "Experiments" ;
             dcterms:format "application/json" ;
             ns2:relation <http://www.iana.org/assignments/relation/parent> ;
             oa:hasTarget <https://example.com/open-science-catalog-metadata/experiments/catalog.json> ],
+        [ rdfs:label "Water Bodies Execution Outputs" ;
+            dcterms:format "application/json" ;
+            ns2:relation <http://www.iana.org/assignments/relation/child> ;
+            oa:hasTarget <https://example.com/open-science-catalog-metadata/products/water-bodies-execution-outputs/collection.json> ],
+        [ rdfs:label "Open Science Catalog" ;
+            dcterms:format "application/json" ;
+            ns2:relation <http://www.iana.org/assignments/relation/root> ;
+            oa:hasTarget <https://example.com/open-science-catalog-metadata/catalog.json> ],
         [ rdfs:label "An EO data exploitation platform" ;
             dcterms:format "application/json" ;
             ns2:relation <http://www.iana.org/assignments/relation/service> ;
             oa:hasTarget <https://example.com> ],
-        [ rdfs:label "Open Science Catalog" ;
-            dcterms:format "application/json" ;
-            ns2:relation <http://www.iana.org/assignments/relation/root> ;
-            oa:hasTarget <https://example.com/open-science-catalog-metadata/catalog.json> ] ;
-    :_comment "This mocks up provenance information for the water bodies execution, first with plain prov then with wf4ever." ;
+        [ dcterms:format "application/json" ;
+            ns2:relation <http://www.iana.org/assignments/relation/self> ;
+            oa:hasTarget <https://example.com/open-science-catalog-metadata/experiments/water-bodies-execution/record.json> ] ;
     :endedAtTime "2025-01-21T17:59:50Z" ;
-    :generated "https://example.com/products/water-bodies/collection.json" ;
+    :generated "https://example.com/open-science-catalog-metadata/products/water-bodies-execution-outputs/collection.json" ;
     :properties [ a :experiment ;
             dcterms:created "2025-01-21T18:00:00Z" ;
             dcterms:description "Experiment using the water bodies workflow." ;
@@ -1196,45 +1023,30 @@ This building block shows a possible profile of GeoDCAT supporting semantic anno
             rec:format [ rec:name "GeoTIFF" ] ;
             rec:themes [ thns:concepts [ thns:id "land"^^xsd:string ] ;
                     thns:scheme "https://github.com/stac-extensions/osc#theme" ] ;
-            ns3:workflow "waterbodies" ] ;
+            ns1:workflow "waterbodies" ] ;
     :provType "Activity",
         "wfprov:WorkflowRun" ;
-    :qualifiedUsage [ a :Usage ;
-            :entity <https://ogc.org/demo/ospd/ogc-api-inputs> ;
-            :role "Processes API inputs" ],
-        [ a :Usage ;
-            :entity <https://ogc.org/demo/ospd/stac_items> ;
-            :role "https://example.com/workflows/water-bodies/record.json#main/stac_items" ],
-        [ a :Usage ;
-            :entity <https://ogc.org/demo/ospd/bands> ;
-            :role "https://example.com/workflows/water-bodies/record.json#main/bands" ],
-        [ a :Usage ;
-            :entity <https://ogc.org/demo/ospd/aoi> ;
-            :role "https://example.com/workflows/water-bodies/record.json#main/aoi" ],
-        [ a :Usage ;
-            :entity <https://ogc.org/demo/ospd/epsg> ;
-            :role "https://example.com/workflows/water-bodies/record.json#main/epsg" ] ;
     :startedAtTime "2025-01-21T17:40:50Z" ;
     :wasAssociatedWith [ :actedOnBehalfOf [ :agentType "Organization" ;
                     :name "An Org" ] ;
             :agentType "Person" ;
             :name "A Person" ] ;
-    ns1:describedByWorkflow "https://example.com/workflows/waterbodies/record.json" ;
-    ns1:usedInput [ a ns1:Artifact ;
-            :describedByParameter "stac_items" ;
-            :hadMember "https://earth-search.aws.element84.com/v0/collections/sentinel-s2-l2a-cogs/items/S2A_10TFK_20220524_0_L2A",
-                "https://earth-search.aws.element84.com/v0/collections/sentinel-s2-l2a-cogs/items/S2B_10TFK_20210713_0_L2A" ],
-        [ a ns1:Artifact ;
+    ns4:describedByWorkflow "https://example.com/workflows/waterbodies/record.json" ;
+    ns4:usedInput [ a ns4:Artifact ;
             :data "green",
                 "nir" ;
             :describedByParameter "bands" ],
-        [ a ns1:Artifact ;
-            :data "EPSG:4326" ;
-            :describedByParameter "epsg" ],
-        [ a ns1:Artifact ;
+        [ a ns4:Artifact ;
+            :describedByParameter "stac_items" ;
+            :hadMember "https://earth-search.aws.element84.com/v0/collections/sentinel-s2-l2a-cogs/items/S2A_10TFK_20220524_0_L2A",
+                "https://earth-search.aws.element84.com/v0/collections/sentinel-s2-l2a-cogs/items/S2B_10TFK_20210713_0_L2A" ],
+        [ a ns4:Artifact ;
             :data "-121.399,39.834,-120.74,40.472" ;
-            :describedByParameter "aoi" ] ;
-    ns1:wasEnactedBy <https://ogc.org/demo/ospd/eo-data-platform> .
+            :describedByParameter "aoi" ],
+        [ a ns4:Artifact ;
+            :data "EPSG:4326" ;
+            :describedByParameter "epsg" ] ;
+    ns4:wasEnactedBy <https://ogc.org/demo/ospd/eo-data-platform> .
 
 
 ```

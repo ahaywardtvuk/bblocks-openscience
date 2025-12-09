@@ -1,5 +1,5 @@
 Validation report for ogc.osc.geodcat-stac-earthcode.products - EarthCODE Product
-Generated 2025-12-01T15:21:42.152900+00:00
+Generated 2025-12-09T09:20:05.731513+00:00
 === General ===
 Test was expected to fail and it did.
 === End General ===
@@ -34,7 +34,7 @@ Validation result for https://ogcincubator.github.io/bblocks-ogcapi-records/_sou
   Conforms: True
   
 Focus nodes for https://ogcincubator.github.io/bblocks-ogcapi-records/_sources/v1/schemas/linkTemplate/rules.shacl:
- - Shape rec:testVarExists: *none*
+ - Shape rec:testAllVarsInTemplate: *none*
 
 === End SHACL ===
 

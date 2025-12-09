@@ -213,8 +213,8 @@ The EarthCODE OSC has requirements which are not captured here
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix geojson: <https://purl.org/geojson/vocab#> .
-@prefix ns1: <osc:> .
-@prefix ns2: <http://www.iana.org/assignments/> .
+@prefix ns1: <http://www.iana.org/assignments/> .
+@prefix ns2: <osc:> .
 @prefix oa: <http://www.w3.org/ns/oa#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -231,29 +231,29 @@ Forecast rasters (+1h … +6h) produced by the Polarwarp workflow using NEXTSIM 
             :temporal [ :interval "2025-02-25T00:00:00Z" ] ] ;
     dcterms:format "Collection" ;
     dcterms:title "Polarwarp" ;
-    rdfs:seeAlso [ ns2:relation <http://www.iana.org/assignments/relation/via> ;
-            oa:hasTarget <https://github.com/gtif-cerulean/polarwarp> ],
-        [ ns2:relation <http://www.iana.org/assignments/relation/item> ;
-            oa:hasTarget <https://ogc.org/demo/ospd/item.json> ],
-        [ rdfs:label "Theme: Cryosphere" ;
+    rdfs:seeAlso [ rdfs:label "Open Science Catalog" ;
             dcterms:type "application/json" ;
-            ns2:relation <http://www.iana.org/assignments/relation/related> ;
-            oa:hasTarget <https://ogc.org/themes/cryosphere/catalog.json> ],
-        [ rdfs:label "Open Science Catalog" ;
-            dcterms:type "application/json" ;
-            ns2:relation <http://www.iana.org/assignments/relation/root> ;
+            ns1:relation <http://www.iana.org/assignments/relation/root> ;
             oa:hasTarget <https://ogc.org/catalog.json> ],
-        [ rdfs:label "Products" ;
-            dcterms:type "application/json" ;
-            ns2:relation <http://www.iana.org/assignments/relation/parent> ;
-            oa:hasTarget <https://ogc.org/demo/catalog.json> ],
         [ rdfs:label "Project: Cerulean Information Factory" ;
             dcterms:type "application/json" ;
-            ns2:relation <http://www.iana.org/assignments/relation/related> ;
+            ns1:relation <http://www.iana.org/assignments/relation/related> ;
             oa:hasTarget <https://ogc.org/projects/cerulean-information-factory/collection.json> ],
+        [ rdfs:label "Theme: Cryosphere" ;
+            dcterms:type "application/json" ;
+            ns1:relation <http://www.iana.org/assignments/relation/related> ;
+            oa:hasTarget <https://ogc.org/themes/cryosphere/catalog.json> ],
+        [ ns1:relation <http://www.iana.org/assignments/relation/via> ;
+            oa:hasTarget <https://github.com/gtif-cerulean/polarwarp> ],
+        [ rdfs:label "Products" ;
+            dcterms:type "application/json" ;
+            ns1:relation <http://www.iana.org/assignments/relation/parent> ;
+            oa:hasTarget <https://ogc.org/demo/catalog.json> ],
+        [ ns1:relation <http://www.iana.org/assignments/relation/item> ;
+            oa:hasTarget <https://ogc.org/demo/ospd/item.json> ],
         [ rdfs:label "Experiment: Polarwarp" ;
             dcterms:type "application/json" ;
-            ns2:relation <http://www.iana.org/assignments/relation/related> ;
+            ns1:relation <http://www.iana.org/assignments/relation/related> ;
             oa:hasTarget <https://ogc.org/experiments/polarwarp/record.json> ] ;
     dcat:license "various" ;
     stac:hasExtension "https://stac-extensions.github.io/osc/v1.0.0/schema.json",
@@ -261,9 +261,306 @@ Forecast rasters (+1h … +6h) produced by the Polarwarp workflow using NEXTSIM 
     stac:version "1.0.0" ;
     rec:themes [ thns:concepts [ thns:id "cryosphere"^^xsd:string ] ;
             thns:scheme "https://github.com/stac-extensions/osc#theme" ] ;
-    ns1:project "cerulean-information-factory" ;
-    ns1:status "completed" ;
+    ns2:project "cerulean-information-factory" ;
+    ns2:status "completed" ;
+    ns2:type "product" .
+
+
+```
+
+
+### Water Bodies
+#### json
+```json
+{
+  "type": "Collection",
+  "id": "water-bodies",
+  "stac_version": "1.0.0",
+  "description": "Water Bodies Example Outputs",
+  "links": [
+    {
+      "rel": "root",
+      "href": "https://example.com/open-science-catalog-metadata/catalog.json",
+      "type": "application/json",
+      "title": "Open Science Catalog"
+    },
+    {
+      "rel": "parent",
+      "href": "https://example.com/open-science-catalog-metadata/products/catalog.json",
+      "type": "application/json",
+      "title": "Experiments"
+    },
+    {
+      "rel": "related",
+      "href": "https://example.com/open-science-catalog-metadata/themes/land/catalog.json",
+      "type": "application/json",
+      "title": "Theme: Land"
+    },
+    {
+      "rel": "related",
+      "href": "https://example.com/open-science-catalog-metadata/experiments/polaris/water-bodies-execution/record.json",
+      "type": "application/json",
+      "title": "Experiment: Water Bodies Execution"
+    },
+    {
+      "rel": "self",
+      "href": "https://esa-earthcode.github.io/open-science-catalog-metadata/products/water-bodies/collection.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "item",
+      "href": "./S2B_10TFK_20210713_0_L2A/S2B_10TFK_20210713_0_L2A.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "item",
+      "href": "./S2A_10TFK_20220524_0_L2A/S2A_10TFK_20220524_0_L2A.json",
+      "type": "application/json"
+    }
+  ],
+  "stac_extensions": [
+    "https://stac-extensions.github.io/osc/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/themes/v1.0.0/schema.json"
+  ],
+  "license": "none",
+  "osc:experiment": "water-bodies-execution",
+  "osc:status": "ongoing",
+  "osc:region": "Global",
+  "osc:type": "product",
+  "osc:project": "ospd",
+  "created": "2025-01-21T17:59:50Z",
+  "version": "1.0",
+  "themes": [
+    {
+      "scheme": "https://github.com/stac-extensions/osc#theme",
+      "concepts": [
+        {
+          "id": "land"
+        }
+      ]
+    }
+  ],
+  "osc:missions": [],
+  "updated": "2025-01-21T17:59:50Z",
+  "title": "Water Bodies",
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [
+          -121.39905410179915,
+          39.82336095080461,
+          -120.73995321724426,
+          40.482798837728375
+        ]
+      ]
+    },
+    "temporal": {
+      "interval": [
+        [
+          "2021-07-13T19:03:24Z",
+          "2022-05-24T19:03:29Z"
+        ]
+      ]
+    }
+  },
+
+  "prov": {
+    "id": "water-bodies-product",
+    "provType": ["prov:Entity", "wfprov:Artifact", "wf4ever:Dataset"],
+    "wasDerivedFrom": [
+      "https://earth-search.aws.element84.com/v0/collections/sentinel-s2-l2a-cogs/items/S2B_10TFK_20210713_0_L2A",
+      "https://earth-search.aws.element84.com/v0/collections/sentinel-s2-l2a-cogs/items/S2A_10TFK_20220524_0_L2A"
+    ],
+    "wfprov:wasOutputFrom": "https://example.com/open-science-catalog-metadata/experiments/water-bodies-execution/record.json",
+    "wfprov:describedByParameter": "stac_catalog"
+  }
+}
+
+```
+
+#### jsonld
+```jsonld
+{
+  "@context": "https://ahaywardtvuk.github.io/bblocks-openscience/build/annotated/osc/geodcat-stac-earthcode/products/context.jsonld",
+  "type": "Collection",
+  "id": "water-bodies",
+  "stac_version": "1.0.0",
+  "description": "Water Bodies Example Outputs",
+  "links": [
+    {
+      "rel": "root",
+      "href": "https://example.com/open-science-catalog-metadata/catalog.json",
+      "type": "application/json",
+      "title": "Open Science Catalog"
+    },
+    {
+      "rel": "parent",
+      "href": "https://example.com/open-science-catalog-metadata/products/catalog.json",
+      "type": "application/json",
+      "title": "Experiments"
+    },
+    {
+      "rel": "related",
+      "href": "https://example.com/open-science-catalog-metadata/themes/land/catalog.json",
+      "type": "application/json",
+      "title": "Theme: Land"
+    },
+    {
+      "rel": "related",
+      "href": "https://example.com/open-science-catalog-metadata/experiments/polaris/water-bodies-execution/record.json",
+      "type": "application/json",
+      "title": "Experiment: Water Bodies Execution"
+    },
+    {
+      "rel": "self",
+      "href": "https://esa-earthcode.github.io/open-science-catalog-metadata/products/water-bodies/collection.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "item",
+      "href": "./S2B_10TFK_20210713_0_L2A/S2B_10TFK_20210713_0_L2A.json",
+      "type": "application/json"
+    },
+    {
+      "rel": "item",
+      "href": "./S2A_10TFK_20220524_0_L2A/S2A_10TFK_20220524_0_L2A.json",
+      "type": "application/json"
+    }
+  ],
+  "stac_extensions": [
+    "https://stac-extensions.github.io/osc/v1.0.0/schema.json",
+    "https://stac-extensions.github.io/themes/v1.0.0/schema.json"
+  ],
+  "license": "none",
+  "osc:experiment": "water-bodies-execution",
+  "osc:status": "ongoing",
+  "osc:region": "Global",
+  "osc:type": "product",
+  "osc:project": "ospd",
+  "created": "2025-01-21T17:59:50Z",
+  "version": "1.0",
+  "themes": [
+    {
+      "scheme": "https://github.com/stac-extensions/osc#theme",
+      "concepts": [
+        {
+          "id": "land"
+        }
+      ]
+    }
+  ],
+  "osc:missions": [],
+  "updated": "2025-01-21T17:59:50Z",
+  "title": "Water Bodies",
+  "extent": {
+    "spatial": {
+      "bbox": [
+        [
+          -121.39905410179915,
+          39.82336095080461,
+          -120.73995321724426,
+          40.482798837728375
+        ]
+      ]
+    },
+    "temporal": {
+      "interval": [
+        [
+          "2021-07-13T19:03:24Z",
+          "2022-05-24T19:03:29Z"
+        ]
+      ]
+    }
+  },
+  "prov": {
+    "id": "water-bodies-product",
+    "provType": [
+      "prov:Entity",
+      "wfprov:Artifact",
+      "wf4ever:Dataset"
+    ],
+    "wasDerivedFrom": [
+      "https://earth-search.aws.element84.com/v0/collections/sentinel-s2-l2a-cogs/items/S2B_10TFK_20210713_0_L2A",
+      "https://earth-search.aws.element84.com/v0/collections/sentinel-s2-l2a-cogs/items/S2A_10TFK_20220524_0_L2A"
+    ],
+    "wfprov:wasOutputFrom": "https://example.com/open-science-catalog-metadata/experiments/water-bodies-execution/record.json",
+    "wfprov:describedByParameter": "stac_catalog"
+  }
+}
+```
+
+#### ttl
+```ttl
+@prefix : <https://w3id.org/ogc/stac/assets/> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix geojson: <https://purl.org/geojson/vocab#> .
+@prefix ns1: <osc:> .
+@prefix ns2: <http://www.iana.org/assignments/> .
+@prefix ns3: <wfprov:> .
+@prefix oa: <http://www.w3.org/ns/oa#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rec: <https://www.opengis.net/def/ogc-api/records/> .
+@prefix stac: <https://w3id.org/ogc/stac/core/> .
+@prefix thns: <https://w3id.org/ogc/stac/themes/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://ogc.org/demo/ospd/water-bodies> dcterms:created "2025-01-21T17:59:50Z" ;
+    dcterms:description "Water Bodies Example Outputs" ;
+    dcterms:extent [ :spatial [ geojson:bbox ( ( -1.213991e+02 3.982336e+01 -1.2074e+02 4.04828e+01 ) ) ] ;
+            :temporal [ :interval "2021-07-13T19:03:24Z",
+                        "2022-05-24T19:03:29Z" ] ] ;
+    dcterms:format "Collection" ;
+    dcterms:modified "2025-01-21T17:59:50Z" ;
+    dcterms:title "Water Bodies" ;
+    rdfs:seeAlso [ rdfs:label "Open Science Catalog" ;
+            dcterms:type "application/json" ;
+            ns2:relation <http://www.iana.org/assignments/relation/root> ;
+            oa:hasTarget <https://example.com/open-science-catalog-metadata/catalog.json> ],
+        [ dcterms:type "application/json" ;
+            ns2:relation <http://www.iana.org/assignments/relation/item> ;
+            oa:hasTarget <https://ogc.org/demo/ospd/S2A_10TFK_20220524_0_L2A/S2A_10TFK_20220524_0_L2A.json> ],
+        [ dcterms:type "application/json" ;
+            ns2:relation <http://www.iana.org/assignments/relation/self> ;
+            oa:hasTarget <https://esa-earthcode.github.io/open-science-catalog-metadata/products/water-bodies/collection.json> ],
+        [ dcterms:type "application/json" ;
+            ns2:relation <http://www.iana.org/assignments/relation/item> ;
+            oa:hasTarget <https://ogc.org/demo/ospd/S2B_10TFK_20210713_0_L2A/S2B_10TFK_20210713_0_L2A.json> ],
+        [ rdfs:label "Experiments" ;
+            dcterms:type "application/json" ;
+            ns2:relation <http://www.iana.org/assignments/relation/parent> ;
+            oa:hasTarget <https://example.com/open-science-catalog-metadata/products/catalog.json> ],
+        [ rdfs:label "Experiment: Water Bodies Execution" ;
+            dcterms:type "application/json" ;
+            ns2:relation <http://www.iana.org/assignments/relation/related> ;
+            oa:hasTarget <https://example.com/open-science-catalog-metadata/experiments/polaris/water-bodies-execution/record.json> ],
+        [ rdfs:label "Theme: Land" ;
+            dcterms:type "application/json" ;
+            ns2:relation <http://www.iana.org/assignments/relation/related> ;
+            oa:hasTarget <https://example.com/open-science-catalog-metadata/themes/land/catalog.json> ] ;
+    dcat:license "none" ;
+    prov: <https://ogc.org/demo/ospd/water-bodies-product> ;
+    :version "1.0" ;
+    stac:hasExtension "https://stac-extensions.github.io/osc/v1.0.0/schema.json",
+        "https://stac-extensions.github.io/themes/v1.0.0/schema.json" ;
+    stac:version "1.0.0" ;
+    rec:themes [ thns:concepts [ thns:id "land"^^xsd:string ] ;
+            thns:scheme "https://github.com/stac-extensions/osc#theme" ] ;
+    ns1:experiment "water-bodies-execution" ;
+    ns1:project "ospd" ;
+    ns1:region "Global" ;
+    ns1:status "ongoing" ;
     ns1:type "product" .
+
+<https://ogc.org/demo/ospd/water-bodies-product> :provType "prov:Entity",
+        "wf4ever:Dataset",
+        "wfprov:Artifact" ;
+    :wasDerivedFrom "https://earth-search.aws.element84.com/v0/collections/sentinel-s2-l2a-cogs/items/S2A_10TFK_20220524_0_L2A",
+        "https://earth-search.aws.element84.com/v0/collections/sentinel-s2-l2a-cogs/items/S2B_10TFK_20210713_0_L2A" ;
+    ns3:describedByParameter "stac_catalog" ;
+    ns3:wasOutputFrom "https://example.com/open-science-catalog-metadata/experiments/water-bodies-execution/record.json" .
 
 
 ```
