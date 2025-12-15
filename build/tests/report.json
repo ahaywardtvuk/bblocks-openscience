@@ -1,16 +1,16 @@
 {
   "summary": {
     "total": 12,
-    "passed": 12,
-    "failed": 0,
-    "result": true
+    "passed": 11,
+    "failed": 1,
+    "result": false
   },
   "bblocks": {
     "ogc.osc.ontology.cwlprov": {
       "title": "Validation report for ogc.osc.ontology.cwlprov - CWL Ontology",
       "bblockName": "CWL Ontology",
       "bblockId": "ogc.osc.ontology.cwlprov",
-      "generated": "2025-12-09T09:19:58.543564+00:00",
+      "generated": "2025-12-15T09:46:15.056850+00:00",
       "result": true,
       "items": [],
       "globalErrors": {},
@@ -24,7 +24,7 @@
       "title": "Validation report for ogc.osc.api-profiles.processes.ipt.results - Result schema for IPT",
       "bblockName": "Result schema for IPT",
       "bblockId": "ogc.osc.api-profiles.processes.ipt.results",
-      "generated": "2025-12-09T09:19:58.553575+00:00",
+      "generated": "2025-12-15T09:46:15.067169+00:00",
       "result": true,
       "items": [],
       "globalErrors": {},
@@ -38,7 +38,7 @@
       "title": "Validation report for ogc.osc.application-package - Application Package",
       "bblockName": "Application Package",
       "bblockId": "ogc.osc.application-package",
-      "generated": "2025-12-09T09:19:58.642848+00:00",
+      "generated": "2025-12-15T09:46:15.118597+00:00",
       "result": true,
       "items": [
         {
@@ -60,7 +60,7 @@
               "entries": [
                 {
                   "isError": false,
-                  "message": "Using example_1_1.yaml from examples"
+                  "message": "Using example_1_1.yaml (example_1_1) from examples"
                 }
               ]
             },
@@ -90,7 +90,7 @@
       "title": "Validation report for ogc.osc.ontology.openscience - Open Science Ontology",
       "bblockName": "Open Science Ontology",
       "bblockId": "ogc.osc.ontology.openscience",
-      "generated": "2025-12-09T09:19:58.646795+00:00",
+      "generated": "2025-12-15T09:46:15.122608+00:00",
       "result": true,
       "items": [],
       "globalErrors": {},
@@ -104,7 +104,7 @@
       "title": "Validation report for ogc.osc.geodcat-stac-earthcode.common - EarthCODE Common STAC profile",
       "bblockName": "EarthCODE Common STAC profile",
       "bblockId": "ogc.osc.geodcat-stac-earthcode.common",
-      "generated": "2025-12-09T09:20:01.442456+00:00",
+      "generated": "2025-12-15T09:46:17.228225+00:00",
       "result": true,
       "items": [
         {
@@ -126,7 +126,7 @@
               "entries": [
                 {
                   "isError": false,
-                  "message": "Using example_1_1.json from examples"
+                  "message": "Using example_1_1.json (example_1_1) from examples"
                 },
                 {
                   "op": "jsonld-uplift",
@@ -198,7 +198,7 @@
       "title": "Validation report for ogc.osc.api-profiles.processes.ipt.execute - Execute (request) schema for IPT",
       "bblockName": "Execute (request) schema for IPT",
       "bblockId": "ogc.osc.api-profiles.processes.ipt.execute",
-      "generated": "2025-12-09T09:20:01.450158+00:00",
+      "generated": "2025-12-15T09:46:17.236228+00:00",
       "result": true,
       "items": [],
       "globalErrors": {},
@@ -212,8 +212,8 @@
       "title": "Validation report for ogc.osc.geodcat-stac-earthcode.experiments - EarthCODE Experiment",
       "bblockName": "EarthCODE Experiment",
       "bblockId": "ogc.osc.geodcat-stac-earthcode.experiments",
-      "generated": "2025-12-09T09:20:04.273094+00:00",
-      "result": true,
+      "generated": "2025-12-15T09:46:19.531805+00:00",
+      "result": false,
       "items": [
         {
           "source": {
@@ -234,7 +234,7 @@
               "entries": [
                 {
                   "isError": false,
-                  "message": "Using example_1_1.json from examples"
+                  "message": "Using example_1_1.json (example_1_1) from examples"
                 },
                 {
                   "op": "jsonld-uplift",
@@ -312,7 +312,7 @@
               "entries": [
                 {
                   "isError": false,
-                  "message": "Using example_2_1.json from examples"
+                  "message": "Using example_2_1.json (example_2_1) from examples"
                 },
                 {
                   "op": "jsonld-uplift",
@@ -382,7 +382,7 @@
             "snippetIndex": 1,
             "language": "application/json"
           },
-          "result": true,
+          "result": false,
           "sections": [
             {
               "name": "FILES",
@@ -390,7 +390,7 @@
               "entries": [
                 {
                   "isError": false,
-                  "message": "Using example_3_1.json from examples"
+                  "message": "Using example_3_1.json (example_3_1) from examples"
                 },
                 {
                   "op": "jsonld-uplift",
@@ -407,7 +407,7 @@
                   "op": "ttl-create",
                   "empty": false,
                   "filename": "example_3_1.ttl",
-                  "size": 101,
+                  "size": 100,
                   "isError": false,
                   "message": "Output Turtle example_3_1.ttl created"
                 }
@@ -419,9 +419,11 @@
               "entries": [
                 {
                   "op": "validation",
-                  "result": true,
-                  "isError": false,
-                  "message": "Validation passed"
+                  "result": false,
+                  "exception": "ValidationError",
+                  "errorMessage": "'experiment' is not one of ['Activity', 'prov:Activity']",
+                  "isError": true,
+                  "message": "ValidationError: 'experiment' is not one of ['Activity', 'prov:Activity']\n\nFailed validating 'enum' in schema[0]:\n    {'enum': ['Activity', 'prov:Activity'], 'type': 'string'}\n\nOn instance:\n    'experiment'"
                 }
               ]
             },
@@ -454,15 +456,15 @@
       "globalErrors": {},
       "counts": {
         "total": 3,
-        "passed": 3,
-        "failed": 0
+        "passed": 2,
+        "failed": 1
       }
     },
     "ogc.osc.geodcat-stac-earthcode.products": {
       "title": "Validation report for ogc.osc.geodcat-stac-earthcode.products - EarthCODE Product",
       "bblockName": "EarthCODE Product",
       "bblockId": "ogc.osc.geodcat-stac-earthcode.products",
-      "generated": "2025-12-09T09:20:05.925403+00:00",
+      "generated": "2025-12-15T09:46:20.651515+00:00",
       "result": true,
       "items": [
         {
@@ -1005,7 +1007,7 @@
               "entries": [
                 {
                   "isError": false,
-                  "message": "Using example_1_1.json from examples"
+                  "message": "Using example_1_1.json (example_1_1) from examples"
                 },
                 {
                   "op": "jsonld-uplift",
@@ -1083,7 +1085,7 @@
               "entries": [
                 {
                   "isError": false,
-                  "message": "Using example_2_1.json from examples"
+                  "message": "Using example_2_1.json (example_2_1) from examples"
                 },
                 {
                   "op": "jsonld-uplift",
@@ -1100,7 +1102,7 @@
                   "op": "ttl-create",
                   "empty": false,
                   "filename": "example_2_1.ttl",
-                  "size": 75,
+                  "size": 74,
                   "isError": false,
                   "message": "Output Turtle example_2_1.ttl created"
                 }
@@ -1155,7 +1157,7 @@
       "title": "Validation report for ogc.osc.geodcat-stac-earthcode.workflows - EarthCODE Workflow",
       "bblockName": "EarthCODE Workflow",
       "bblockId": "ogc.osc.geodcat-stac-earthcode.workflows",
-      "generated": "2025-12-09T09:20:06.585801+00:00",
+      "generated": "2025-12-15T09:46:21.271855+00:00",
       "result": true,
       "items": [
         {
@@ -1177,7 +1179,7 @@
               "entries": [
                 {
                   "isError": false,
-                  "message": "Using example_1_1.json from examples"
+                  "message": "Using example_1_1.json (example_1_1) from examples"
                 },
                 {
                   "op": "jsonld-uplift",
@@ -1256,7 +1258,7 @@
               "entries": [
                 {
                   "isError": false,
-                  "message": "Using example_2_1.json from examples"
+                  "message": "Using example_2_1.json (example_2_1) from examples"
                 },
                 {
                   "op": "jsonld-uplift",
@@ -1335,7 +1337,7 @@
               "entries": [
                 {
                   "isError": false,
-                  "message": "Using example_3_1.json from examples"
+                  "message": "Using example_3_1.json (example_3_1) from examples"
                 },
                 {
                   "op": "jsonld-uplift",
@@ -1413,7 +1415,7 @@
               "entries": [
                 {
                   "isError": false,
-                  "message": "Using example_4_1.json from examples"
+                  "message": "Using example_4_1.json (example_4_1) from examples"
                 },
                 {
                   "op": "jsonld-uplift",
@@ -1492,7 +1494,7 @@
               "entries": [
                 {
                   "isError": false,
-                  "message": "Using example_5_1.json from examples"
+                  "message": "Using example_5_1.json (example_5_1) from examples"
                 },
                 {
                   "op": "jsonld-uplift",
@@ -1564,7 +1566,7 @@
       "title": "Validation report for ogc.osc.api-profiles.processes.ipt.api - IPT Profile of OGC API Processes",
       "bblockName": "IPT Profile of OGC API Processes",
       "bblockId": "ogc.osc.api-profiles.processes.ipt.api",
-      "generated": "2025-12-09T09:20:06.591320+00:00",
+      "generated": "2025-12-15T09:46:21.277522+00:00",
       "result": true,
       "items": [],
       "globalErrors": {},
@@ -1578,7 +1580,7 @@
       "title": "Validation report for ogc.osc.api-profiles.processes.workflow - Workflow profile of OGC API Processes",
       "bblockName": "Workflow profile of OGC API Processes",
       "bblockId": "ogc.osc.api-profiles.processes.workflow",
-      "generated": "2025-12-09T09:20:06.594827+00:00",
+      "generated": "2025-12-15T09:46:21.281194+00:00",
       "result": true,
       "items": [],
       "globalErrors": {},
@@ -1592,7 +1594,7 @@
       "title": "Validation report for ogc.osc.api-profiles.processes.ospd - Open Science profile of OGC API Processes",
       "bblockName": "Open Science profile of OGC API Processes",
       "bblockId": "ogc.osc.api-profiles.processes.ospd",
-      "generated": "2025-12-09T09:20:06.641023+00:00",
+      "generated": "2025-12-15T09:46:21.306765+00:00",
       "result": true,
       "items": [],
       "globalErrors": {},

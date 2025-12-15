@@ -2,8 +2,8 @@
   "title": "Validation report for ogc.osc.geodcat-stac-earthcode.experiments - EarthCODE Experiment",
   "bblockName": "EarthCODE Experiment",
   "bblockId": "ogc.osc.geodcat-stac-earthcode.experiments",
-  "generated": "2025-12-09T09:20:04.273094+00:00",
-  "result": true,
+  "generated": "2025-12-15T09:46:19.531805+00:00",
+  "result": false,
   "items": [
     {
       "source": {
@@ -24,7 +24,7 @@
           "entries": [
             {
               "isError": false,
-              "message": "Using example_1_1.json from examples"
+              "message": "Using example_1_1.json (example_1_1) from examples"
             },
             {
               "op": "jsonld-uplift",
@@ -102,7 +102,7 @@
           "entries": [
             {
               "isError": false,
-              "message": "Using example_2_1.json from examples"
+              "message": "Using example_2_1.json (example_2_1) from examples"
             },
             {
               "op": "jsonld-uplift",
@@ -172,7 +172,7 @@
         "snippetIndex": 1,
         "language": "application/json"
       },
-      "result": true,
+      "result": false,
       "sections": [
         {
           "name": "FILES",
@@ -180,7 +180,7 @@
           "entries": [
             {
               "isError": false,
-              "message": "Using example_3_1.json from examples"
+              "message": "Using example_3_1.json (example_3_1) from examples"
             },
             {
               "op": "jsonld-uplift",
@@ -197,7 +197,7 @@
               "op": "ttl-create",
               "empty": false,
               "filename": "example_3_1.ttl",
-              "size": 101,
+              "size": 100,
               "isError": false,
               "message": "Output Turtle example_3_1.ttl created"
             }
@@ -209,9 +209,11 @@
           "entries": [
             {
               "op": "validation",
-              "result": true,
-              "isError": false,
-              "message": "Validation passed"
+              "result": false,
+              "exception": "ValidationError",
+              "errorMessage": "'experiment' is not one of ['Activity', 'prov:Activity']",
+              "isError": true,
+              "message": "ValidationError: 'experiment' is not one of ['Activity', 'prov:Activity']\n\nFailed validating 'enum' in schema[0]:\n    {'enum': ['Activity', 'prov:Activity'], 'type': 'string'}\n\nOn instance:\n    'experiment'"
             }
           ]
         },
@@ -244,7 +246,7 @@
   "globalErrors": {},
   "counts": {
     "total": 3,
-    "passed": 3,
-    "failed": 0
+    "passed": 2,
+    "failed": 1
   }
 }

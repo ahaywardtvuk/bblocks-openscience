@@ -255,47 +255,47 @@ This building block shows a possible profile of GeoDCAT supporting semantic anno
 
 <https://ogc.org/demo/ospd/polaris-experiment> a geojson:Feature ;
     dcterms:conformsTo <http://www.opengis.net/spec/ogcapi-records-1/1.0/req/record-core> ;
-    rdfs:seeAlso [ rdfs:label "Open Science Catalog" ;
-            dcterms:format "application/json" ;
-            ns1:relation <http://www.iana.org/assignments/relation/root> ;
-            oa:hasTarget <https://ogc.org/catalog.json> ],
-        [ rdfs:label "Input parameters" ;
-            dcterms:format "application/yaml" ;
-            ns1:relation <http://www.iana.org/assignments/relation/input> ;
-            oa:hasTarget <https://ogc.org/demo/ospd/input.yaml> ],
-        [ rdfs:label "POLARIS" ;
-            dcterms:format "application/json" ;
-            ns1:relation <http://www.iana.org/assignments/relation/child> ;
-            oa:hasTarget <https://ogc.org/products/polaris/collection.json> ],
-        [ dcterms:format "application/json" ;
+    rdfs:seeAlso [ dcterms:format "application/json" ;
             ns1:relation <http://www.iana.org/assignments/relation/self> ;
             oa:hasTarget <https://esa-earthcode.github.io/open-science-catalog-metadata/experiments/polaris-experiment/item.json> ],
-        [ rdfs:label "Experiments" ;
-            dcterms:format "application/json" ;
-            ns1:relation <http://www.iana.org/assignments/relation/parent> ;
-            oa:hasTarget <https://ogc.org/demo/catalog.json> ],
-        [ rdfs:label "Theme: Oceans" ;
-            dcterms:format "application/json" ;
-            ns1:relation <http://www.iana.org/assignments/relation/related> ;
-            oa:hasTarget <https://ogc.org/themes/oceans/catalog.json> ],
         [ rdfs:label "Execution environment" ;
             dcterms:format "application/yaml" ;
             ns1:relation <http://www.iana.org/assignments/relation/environment> ;
             oa:hasTarget <https://ogc.org/demo/ospd/environment.yaml> ],
+        [ rdfs:label "Theme: Oceans" ;
+            dcterms:format "application/json" ;
+            ns1:relation <http://www.iana.org/assignments/relation/related> ;
+            oa:hasTarget <https://ogc.org/themes/oceans/catalog.json> ],
         [ rdfs:label "Workflow: POLARIS" ;
             dcterms:format "application/json" ;
             ns1:relation <http://www.iana.org/assignments/relation/related> ;
-            oa:hasTarget <https://ogc.org/workflows/polaris-workflow/record.json> ] ;
+            oa:hasTarget <https://ogc.org/workflows/polaris-workflow/record.json> ],
+        [ rdfs:label "POLARIS" ;
+            dcterms:format "application/json" ;
+            ns1:relation <http://www.iana.org/assignments/relation/child> ;
+            oa:hasTarget <https://ogc.org/products/polaris/collection.json> ],
+        [ rdfs:label "Open Science Catalog" ;
+            dcterms:format "application/json" ;
+            ns1:relation <http://www.iana.org/assignments/relation/root> ;
+            oa:hasTarget <https://ogc.org/catalog.json> ],
+        [ rdfs:label "Experiments" ;
+            dcterms:format "application/json" ;
+            ns1:relation <http://www.iana.org/assignments/relation/parent> ;
+            oa:hasTarget <https://ogc.org/demo/catalog.json> ],
+        [ rdfs:label "Input parameters" ;
+            dcterms:format "application/yaml" ;
+            ns1:relation <http://www.iana.org/assignments/relation/input> ;
+            oa:hasTarget <https://ogc.org/demo/ospd/input.yaml> ] ;
     :properties [ a :experiment ;
             dcterms:created "2025-02-19T23:00:00Z" ;
             dcterms:description "Polar Operational Limit Assessment Risk Index System (POLARIS)" ;
             dcterms:modified "2025-02-19T23:00:00Z" ;
             dcterms:title "POLARIS" ;
-            dcat:contactPoint [ :contactInstructions "Contact via EarthCODE" ;
+            dcat:contactPoint [ rdfs:label "EarthCODE Demo" ;
+                    :contactInstructions "Contact via EarthCODE" ;
                     :links [ dcterms:type "text/html" ;
                             ns1:relation <http://www.iana.org/assignments/relation/about> ;
                             oa:hasTarget <https://opensciencedata.esa.int/> ] ;
-                    :name "EarthCODE Demo" ;
                     :organization "EarthCODE" ;
                     stac:roles "host" ] ;
             dcat:keyword "polar",
@@ -543,18 +543,14 @@ This building block shows a possible profile of GeoDCAT supporting semantic anno
 
 <https://ogc.org/demo/ospd/water-bodies-execution> a geojson:Feature ;
     dcterms:conformsTo <http://www.opengis.net/spec/ogcapi-records-1/1.0/req/record-core> ;
-    rdfs:seeAlso [ rdfs:label "Open Science Catalog" ;
-            dcterms:format "application/json" ;
-            ns1:relation <http://www.iana.org/assignments/relation/root> ;
-            oa:hasTarget <https://example.com/open-science-catalog-metadata/catalog.json> ],
-        [ rdfs:label "Theme: Land" ;
+    rdfs:seeAlso [ rdfs:label "Theme: Land" ;
             dcterms:format "application/json" ;
             ns1:relation <http://www.iana.org/assignments/relation/related> ;
             oa:hasTarget <https://example.com/open-science-catalog-metadata/themes/land/catalog.json> ],
-        [ rdfs:label "Water Bodies Execution Outputs" ;
+        [ rdfs:label "Open Science Catalog" ;
             dcterms:format "application/json" ;
-            ns1:relation <http://www.iana.org/assignments/relation/child> ;
-            oa:hasTarget <https://example.com/open-science-catalog-metadata/products/water-bodies-execution-outputs/collection.json> ],
+            ns1:relation <http://www.iana.org/assignments/relation/root> ;
+            oa:hasTarget <https://example.com/open-science-catalog-metadata/catalog.json> ],
         [ dcterms:format "application/json" ;
             ns1:relation <http://www.iana.org/assignments/relation/self> ;
             oa:hasTarget <https://example.com/open-science-catalog-metadata/experiments/water-bodies-execution/record.json> ],
@@ -569,23 +565,27 @@ This building block shows a possible profile of GeoDCAT supporting semantic anno
         [ rdfs:label "An EO data exploitation platform" ;
             dcterms:format "application/json" ;
             ns1:relation <http://www.iana.org/assignments/relation/service> ;
-            oa:hasTarget <https://example.com> ] ;
+            oa:hasTarget <https://example.com> ],
+        [ rdfs:label "Water Bodies Execution Outputs" ;
+            dcterms:format "application/json" ;
+            ns1:relation <http://www.iana.org/assignments/relation/child> ;
+            oa:hasTarget <https://example.com/open-science-catalog-metadata/products/water-bodies-execution-outputs/collection.json> ] ;
     :properties [ a :experiment ;
             dcterms:created "2025-01-21T18:00:00Z" ;
             dcterms:description "Experiment using the water bodies workflow." ;
             dcterms:modified "2025-01-21T18:40:00Z" ;
             dcterms:title "ESA WorldCereal Experiment" ;
-            dcat:contactPoint [ :contactInstructions "Contact via website" ;
-                    :name "A person" ;
-                    :organization "An Org" ;
-                    :position "Researcher" ;
-                    stac:roles "principal investigator" ],
-                [ :contactInstructions "SEE WEBSITE" ;
+            dcat:contactPoint [ rdfs:label "An Org" ;
+                    :contactInstructions "SEE WEBSITE" ;
                     :links [ dcterms:type "text/html" ;
                             ns1:relation <http://www.iana.org/assignments/relation/about> ;
                             oa:hasTarget <https://example.com/> ] ;
-                    :name "An Org" ;
-                    stac:roles "processor" ] ;
+                    stac:roles "processor" ],
+                [ rdfs:label "A person" ;
+                    :contactInstructions "Contact via website" ;
+                    :organization "An Org" ;
+                    :position "Researcher" ;
+                    stac:roles "principal investigator" ] ;
             dcat:license "proprietary" ;
             :version "2" ;
             rec:format [ rec:name "GeoTIFF" ] ;
@@ -602,8 +602,9 @@ This describes an execution of the water bodies example workflow included in the
 bblock.
 
 Some notes:
-  - The 'prov' property contains the provenance data because the current schemas won't allow it to
-    be at the top level or inside `properties` due to a clash in the `type` field.
+  - Validation fails because 1) OGC Records requires properties.type to be a string, 2) prov-activity
+    requires properties.type to be 'Activity' or 'prov:Activity' or an array containing this,
+    and 3) EarthCODE requires properties.type to be 'experiment'.
   - The wfprov:usedInput is nearer to a natural representation of the inputs than plain PROV's
     qualifiedUsage. However, there is no equivalent wfprov:generatedOutput, which makes it difficult
     to say that the output is a STAC Collection and that it was the stac_catalog output parameter.
@@ -627,63 +628,61 @@ Some notes:
   "geometry": null,
 
   "properties": {
-    "prov": {
-      "id": "water-bodies-execution",
-      "provType": [
-        "Activity",
-        "wfprov:WorkflowRun"
-      ],
-      "startedAtTime": "2025-01-21T17:40:50Z",
-      "endedAtTime": "2025-01-21T17:59:50Z",
-      "wasAssociatedWith": [
-        {
-          "agentType": "Person",
-          "name": "A Person",
-          "actedOnBehalfOf": {
-            "agentType": "Organization",
-            "name": "An Org"
-          }
+    "id": "water-bodies-execution",
+    "provType": [
+      "Activity",
+      "wfprov:WorkflowRun"
+    ],
+    "startedAtTime": "2025-01-21T17:40:50Z",
+    "endedAtTime": "2025-01-21T17:59:50Z",
+    "wasAssociatedWith": [
+      {
+        "agentType": "Person",
+        "name": "A Person",
+        "actedOnBehalfOf": {
+          "agentType": "Organization",
+          "name": "An Org"
         }
-      ],
+      }
+    ],
 
-      "generated": "https://example.com/open-science-catalog-metadata/products/water-bodies-execution-outputs/collection.json",
+    "generated": "https://example.com/open-science-catalog-metadata/products/water-bodies-execution-outputs/collection.json",
 
-      
-      "wfprov:describedByWorkflow": "https://example.com/workflows/waterbodies/record.json",
-      "wfprov:wasEnactedBy": { 
-        "id": "eo-data-platform",
-        "type": ["wfprov:WorkfowEngine", "prov:SoftwareAgent", "prov:Agent"],
-        "prov:label": "cwltool 3.1.20251031082601"
-      },
-      "wfprov:usedInput": [
-        {
-          "type": "wfprov:Artifact",
-          "hadMember": [
-            "https://earth-search.aws.element84.com/v0/collections/sentinel-s2-l2a-cogs/items/S2B_10TFK_20210713_0_L2A",
-            "https://earth-search.aws.element84.com/v0/collections/sentinel-s2-l2a-cogs/items/S2A_10TFK_20220524_0_L2A"
-          ],
-          "describedByParameter": "stac_items"
-        },
-        {
-          "type": "wfprov:Artifact",
-          "data": "-121.399,39.834,-120.74,40.472",
-          "describedByParameter": "aoi"
-        },
-        {
-          "type": "wfprov:Artifact",
-          "data": "EPSG:4326",
-          "describedByParameter": "epsg"
-        },
-        {
-          "type": "wfprov:Artifact",
-          "data": [
-              "green",
-              "nir"
-          ],
-          "describedByParameter": "bands"
-        }
-      ]
+    
+    "wfprov:describedByWorkflow": "https://example.com/workflows/waterbodies/record.json",
+    "wfprov:wasEnactedBy": { 
+      "id": "eo-data-platform",
+      "type": ["wfprov:WorkfowEngine", "prov:SoftwareAgent", "prov:Agent"],
+      "prov:label": "cwltool 3.1.20251031082601"
     },
+    "wfprov:usedInput": [
+      {
+        "type": "wfprov:Artifact",
+        "hadMember": [
+          "https://earth-search.aws.element84.com/v0/collections/sentinel-s2-l2a-cogs/items/S2B_10TFK_20210713_0_L2A",
+          "https://earth-search.aws.element84.com/v0/collections/sentinel-s2-l2a-cogs/items/S2A_10TFK_20220524_0_L2A"
+        ],
+        "describedByParameter": "stac_items"
+      },
+      {
+        "type": "wfprov:Artifact",
+        "data": "-121.399,39.834,-120.74,40.472",
+        "describedByParameter": "aoi"
+      },
+      {
+        "type": "wfprov:Artifact",
+        "data": "EPSG:4326",
+        "describedByParameter": "epsg"
+      },
+      {
+        "type": "wfprov:Artifact",
+        "data": [
+            "green",
+            "nir"
+        ],
+        "describedByParameter": "bands"
+      }
+    ],
 
 
     "created": "2025-01-21T18:00:00Z",
@@ -794,64 +793,62 @@ Some notes:
   ],
   "geometry": null,
   "properties": {
-    "prov": {
-      "id": "water-bodies-execution",
-      "provType": [
-        "Activity",
-        "wfprov:WorkflowRun"
-      ],
-      "startedAtTime": "2025-01-21T17:40:50Z",
-      "endedAtTime": "2025-01-21T17:59:50Z",
-      "wasAssociatedWith": [
-        {
-          "agentType": "Person",
-          "name": "A Person",
-          "actedOnBehalfOf": {
-            "agentType": "Organization",
-            "name": "An Org"
-          }
+    "id": "water-bodies-execution",
+    "provType": [
+      "Activity",
+      "wfprov:WorkflowRun"
+    ],
+    "startedAtTime": "2025-01-21T17:40:50Z",
+    "endedAtTime": "2025-01-21T17:59:50Z",
+    "wasAssociatedWith": [
+      {
+        "agentType": "Person",
+        "name": "A Person",
+        "actedOnBehalfOf": {
+          "agentType": "Organization",
+          "name": "An Org"
         }
+      }
+    ],
+    "generated": "https://example.com/open-science-catalog-metadata/products/water-bodies-execution-outputs/collection.json",
+    "wfprov:describedByWorkflow": "https://example.com/workflows/waterbodies/record.json",
+    "wfprov:wasEnactedBy": {
+      "id": "eo-data-platform",
+      "type": [
+        "wfprov:WorkfowEngine",
+        "prov:SoftwareAgent",
+        "prov:Agent"
       ],
-      "generated": "https://example.com/open-science-catalog-metadata/products/water-bodies-execution-outputs/collection.json",
-      "wfprov:describedByWorkflow": "https://example.com/workflows/waterbodies/record.json",
-      "wfprov:wasEnactedBy": {
-        "id": "eo-data-platform",
-        "type": [
-          "wfprov:WorkfowEngine",
-          "prov:SoftwareAgent",
-          "prov:Agent"
-        ],
-        "prov:label": "cwltool 3.1.20251031082601"
-      },
-      "wfprov:usedInput": [
-        {
-          "type": "wfprov:Artifact",
-          "hadMember": [
-            "https://earth-search.aws.element84.com/v0/collections/sentinel-s2-l2a-cogs/items/S2B_10TFK_20210713_0_L2A",
-            "https://earth-search.aws.element84.com/v0/collections/sentinel-s2-l2a-cogs/items/S2A_10TFK_20220524_0_L2A"
-          ],
-          "describedByParameter": "stac_items"
-        },
-        {
-          "type": "wfprov:Artifact",
-          "data": "-121.399,39.834,-120.74,40.472",
-          "describedByParameter": "aoi"
-        },
-        {
-          "type": "wfprov:Artifact",
-          "data": "EPSG:4326",
-          "describedByParameter": "epsg"
-        },
-        {
-          "type": "wfprov:Artifact",
-          "data": [
-            "green",
-            "nir"
-          ],
-          "describedByParameter": "bands"
-        }
-      ]
+      "prov:label": "cwltool 3.1.20251031082601"
     },
+    "wfprov:usedInput": [
+      {
+        "type": "wfprov:Artifact",
+        "hadMember": [
+          "https://earth-search.aws.element84.com/v0/collections/sentinel-s2-l2a-cogs/items/S2B_10TFK_20210713_0_L2A",
+          "https://earth-search.aws.element84.com/v0/collections/sentinel-s2-l2a-cogs/items/S2A_10TFK_20220524_0_L2A"
+        ],
+        "describedByParameter": "stac_items"
+      },
+      {
+        "type": "wfprov:Artifact",
+        "data": "-121.399,39.834,-120.74,40.472",
+        "describedByParameter": "aoi"
+      },
+      {
+        "type": "wfprov:Artifact",
+        "data": "EPSG:4326",
+        "describedByParameter": "epsg"
+      },
+      {
+        "type": "wfprov:Artifact",
+        "data": [
+          "green",
+          "nir"
+        ],
+        "describedByParameter": "bands"
+      }
+    ],
     "created": "2025-01-21T18:00:00Z",
     "updated": "2025-01-21T18:40:00Z",
     "type": "experiment",
@@ -954,44 +951,51 @@ Some notes:
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix geojson: <https://purl.org/geojson/vocab#> .
-@prefix ns1: <osc:> .
+@prefix ns1: <wfprov:> .
 @prefix ns2: <http://www.iana.org/assignments/> .
-@prefix ns3: <prov:> .
-@prefix ns4: <wfprov:> .
+@prefix ns3: <osc:> .
 @prefix oa: <http://www.w3.org/ns/oa#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix rec: <https://www.opengis.net/def/ogc-api/records/> .
 @prefix stac: <https://w3id.org/ogc/stac/core/> .
 @prefix thns: <https://w3id.org/ogc/stac/themes/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<https://ogc.org/demo/ospd/eo-data-platform> a ns3:Agent,
-        ns3:SoftwareAgent,
-        ns4:WorkfowEngine ;
-    ns3:label "cwltool 3.1.20251031082601" .
+<https://ogc.org/demo/ospd/eo-data-platform> a prov:Agent,
+        prov:SoftwareAgent,
+        ns1:WorkfowEngine ;
+    prov:label "cwltool 3.1.20251031082601" .
 
-<https://ogc.org/demo/ospd/water-bodies-execution> a geojson:Feature ;
+<https://ogc.org/demo/ospd/water-bodies-execution> a prov:Activity,
+        geojson:Feature,
+        :experiment,
+        ns1:WorkflowRun ;
     dcterms:conformsTo <http://www.opengis.net/spec/ogcapi-records-1/1.0/req/record-core> ;
-    rdfs:seeAlso [ rdfs:label "Workflow: Water Bodies" ;
+    dcterms:created "2025-01-21T18:00:00Z" ;
+    dcterms:description "Experiment using the water bodies workflow." ;
+    dcterms:modified "2025-01-21T18:40:00Z" ;
+    dcterms:title "Water Bodies Experiment" ;
+    rdfs:seeAlso [ rdfs:label "Open Science Catalog" ;
             dcterms:format "application/json" ;
-            ns2:relation <http://www.iana.org/assignments/relation/related> ;
-            oa:hasTarget <https://example.com/open-science-catalog-metadata/workflows/waterbodies/record.json> ],
-        [ rdfs:label "Theme: Land" ;
-            dcterms:format "application/json" ;
-            ns2:relation <http://www.iana.org/assignments/relation/related> ;
-            oa:hasTarget <https://example.com/open-science-catalog-metadata/themes/land/catalog.json> ],
-        [ rdfs:label "Experiments" ;
-            dcterms:format "application/json" ;
-            ns2:relation <http://www.iana.org/assignments/relation/parent> ;
-            oa:hasTarget <https://example.com/open-science-catalog-metadata/experiments/catalog.json> ],
+            ns2:relation <http://www.iana.org/assignments/relation/root> ;
+            oa:hasTarget <https://example.com/open-science-catalog-metadata/catalog.json> ],
         [ rdfs:label "Water Bodies Execution Outputs" ;
             dcterms:format "application/json" ;
             ns2:relation <http://www.iana.org/assignments/relation/child> ;
             oa:hasTarget <https://example.com/open-science-catalog-metadata/products/water-bodies-execution-outputs/collection.json> ],
-        [ rdfs:label "Open Science Catalog" ;
+        [ rdfs:label "Workflow: Water Bodies" ;
             dcterms:format "application/json" ;
-            ns2:relation <http://www.iana.org/assignments/relation/root> ;
-            oa:hasTarget <https://example.com/open-science-catalog-metadata/catalog.json> ],
+            ns2:relation <http://www.iana.org/assignments/relation/related> ;
+            oa:hasTarget <https://example.com/open-science-catalog-metadata/workflows/waterbodies/record.json> ],
+        [ rdfs:label "Experiments" ;
+            dcterms:format "application/json" ;
+            ns2:relation <http://www.iana.org/assignments/relation/parent> ;
+            oa:hasTarget <https://example.com/open-science-catalog-metadata/experiments/catalog.json> ],
+        [ rdfs:label "Theme: Land" ;
+            dcterms:format "application/json" ;
+            ns2:relation <http://www.iana.org/assignments/relation/related> ;
+            oa:hasTarget <https://example.com/open-science-catalog-metadata/themes/land/catalog.json> ],
         [ rdfs:label "An EO data exploitation platform" ;
             dcterms:format "application/json" ;
             ns2:relation <http://www.iana.org/assignments/relation/service> ;
@@ -999,54 +1003,47 @@ Some notes:
         [ dcterms:format "application/json" ;
             ns2:relation <http://www.iana.org/assignments/relation/self> ;
             oa:hasTarget <https://example.com/open-science-catalog-metadata/experiments/water-bodies-execution/record.json> ] ;
-    :endedAtTime "2025-01-21T17:59:50Z" ;
-    :generated "https://example.com/open-science-catalog-metadata/products/water-bodies-execution-outputs/collection.json" ;
-    :properties [ a :experiment ;
-            dcterms:created "2025-01-21T18:00:00Z" ;
-            dcterms:description "Experiment using the water bodies workflow." ;
-            dcterms:modified "2025-01-21T18:40:00Z" ;
-            dcterms:title "Water Bodies Experiment" ;
-            dcat:contactPoint [ :contactInstructions "SEE WEBSITE" ;
-                    :links [ dcterms:type "text/html" ;
-                            ns2:relation <http://www.iana.org/assignments/relation/about> ;
-                            oa:hasTarget <https://example.com/> ] ;
-                    :name "An Org" ;
-                    stac:roles "processor" ],
-                [ :contactInstructions "Contact via website" ;
-                    :name "A person" ;
-                    :organization "An Org" ;
-                    :position "Researcher" ;
-                    stac:roles "principal investigator" ] ;
-            dcat:license "proprietary" ;
-            :prov <https://ogc.org/demo/ospd/water-bodies-execution> ;
-            :version "2" ;
-            rec:format [ rec:name "GeoTIFF" ] ;
-            rec:themes [ thns:concepts [ thns:id "land"^^xsd:string ] ;
-                    thns:scheme "https://github.com/stac-extensions/osc#theme" ] ;
-            ns1:workflow "waterbodies" ] ;
-    :provType "Activity",
-        "wfprov:WorkflowRun" ;
-    :startedAtTime "2025-01-21T17:40:50Z" ;
-    :wasAssociatedWith [ :actedOnBehalfOf [ :agentType "Organization" ;
-                    :name "An Org" ] ;
-            :agentType "Person" ;
-            :name "A Person" ] ;
-    ns4:describedByWorkflow "https://example.com/workflows/waterbodies/record.json" ;
-    ns4:usedInput [ a ns4:Artifact ;
+    dcat:contactPoint [ rdfs:label "A person" ;
+            :contactInstructions "Contact via website" ;
+            :organization "An Org" ;
+            :position "Researcher" ;
+            stac:roles "principal investigator" ],
+        [ rdfs:label "An Org" ;
+            :contactInstructions "SEE WEBSITE" ;
+            :links [ dcterms:type "text/html" ;
+                    ns2:relation <http://www.iana.org/assignments/relation/about> ;
+                    oa:hasTarget <https://example.com/> ] ;
+            stac:roles "processor" ] ;
+    dcat:license "proprietary" ;
+    prov:endedAtTime "2025-01-21T17:59:50+00:00"^^xsd:dateTime ;
+    prov:generated <https://example.com/open-science-catalog-metadata/products/water-bodies-execution-outputs/collection.json> ;
+    prov:startedAtTime "2025-01-21T17:40:50+00:00"^^xsd:dateTime ;
+    prov:wasAssociatedWith [ a prov:Person ;
+            rdfs:label "A Person" ;
+            prov:actedOnBehalfOf [ a prov:Organization ;
+                    rdfs:label "An Org" ] ] ;
+    :properties <https://ogc.org/demo/ospd/water-bodies-execution> ;
+    :version "2" ;
+    rec:format [ rec:name "GeoTIFF" ] ;
+    rec:themes [ thns:concepts [ thns:id "land"^^xsd:string ] ;
+            thns:scheme "https://github.com/stac-extensions/osc#theme" ] ;
+    ns3:workflow "waterbodies" ;
+    ns1:describedByWorkflow "https://example.com/workflows/waterbodies/record.json" ;
+    ns1:usedInput [ a ns1:Artifact ;
             :data "green",
                 "nir" ;
             :describedByParameter "bands" ],
-        [ a ns4:Artifact ;
-            :describedByParameter "stac_items" ;
-            :hadMember "https://earth-search.aws.element84.com/v0/collections/sentinel-s2-l2a-cogs/items/S2A_10TFK_20220524_0_L2A",
-                "https://earth-search.aws.element84.com/v0/collections/sentinel-s2-l2a-cogs/items/S2B_10TFK_20210713_0_L2A" ],
-        [ a ns4:Artifact ;
+        [ a ns1:Artifact ;
             :data "-121.399,39.834,-120.74,40.472" ;
             :describedByParameter "aoi" ],
-        [ a ns4:Artifact ;
+        [ a ns1:Artifact ;
+            prov:hadMember <https://earth-search.aws.element84.com/v0/collections/sentinel-s2-l2a-cogs/items/S2A_10TFK_20220524_0_L2A>,
+                <https://earth-search.aws.element84.com/v0/collections/sentinel-s2-l2a-cogs/items/S2B_10TFK_20210713_0_L2A> ;
+            :describedByParameter "stac_items" ],
+        [ a ns1:Artifact ;
             :data "EPSG:4326" ;
             :describedByParameter "epsg" ] ;
-    ns4:wasEnactedBy <https://ogc.org/demo/ospd/eo-data-platform> .
+    ns1:wasEnactedBy <https://ogc.org/demo/ospd/eo-data-platform> .
 
 
 ```
@@ -1067,8 +1064,11 @@ properties:
     properties:
       osc:workflow:
         $ref: https://ahaywardtvuk.github.io/bblocks-openscience/build/annotated/osc/geodcat-stac-earthcode/common/schema.yaml#/$defs/osc:workflow
-      prov:
-        $ref: https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov-activity/schema.yaml
+    anyOf:
+    - $ref: https://ogcincubator.github.io/bblock-prov-schema/build/annotated/ogc-utils/prov-activity/schema.yaml
+    - not:
+        required:
+        - provType
   links:
     type: array
     items:
@@ -1280,7 +1280,6 @@ Links to the schema:
       "@type": "@id",
       "@context": {
         "identifier": {},
-        "name": {},
         "position": {},
         "organization": {},
         "logo": {
@@ -1299,16 +1298,8 @@ Links to the schema:
             "length": "dct:extent"
           }
         },
-        "phones": {
-          "@context": {
-            "value": {}
-          }
-        },
-        "emails": {
-          "@context": {
-            "value": {}
-          }
-        },
+        "phones": {},
+        "emails": {},
         "addresses": {
           "@context": {
             "deliveryPoint": {},
@@ -1354,11 +1345,7 @@ Links to the schema:
       "@id": "stac:roles",
       "@container": "@set"
     },
-    "bands": {
-      "@context": {
-        "name": {}
-      }
-    },
+    "bands": {},
     "datetime": {
       "@id": "dct:date",
       "@type": "xsd:dateTime"
@@ -1385,7 +1372,6 @@ Links to the schema:
     "gsd": {},
     "providers": {
       "@context": {
-        "name": {},
         "url": {}
       }
     },
@@ -1436,8 +1422,804 @@ Links to the schema:
     "osc:missions": {},
     "osc:experiment": {},
     "osc:workflows": {},
+    "wasInfluencedBy": {
+      "@context": {
+        "type": "dct:type",
+        "rel": {
+          "@context": {
+            "@base": "http://www.iana.org/assignments/relation/"
+          },
+          "@id": "http://www.iana.org/assignments/relation",
+          "@type": "@id"
+        },
+        "anchor": {},
+        "hreflang": "dct:language",
+        "title": "rdfs:label",
+        "length": "dct:extent"
+      },
+      "@id": "prov:wasInfluencedBy",
+      "@type": "@id"
+    },
+    "qualifiedInfluence": {
+      "@context": {
+        "influencer": {
+          "@context": {
+            "type": "dct:type",
+            "rel": {
+              "@context": {
+                "@base": "http://www.iana.org/assignments/relation/"
+              },
+              "@id": "http://www.iana.org/assignments/relation",
+              "@type": "@id"
+            },
+            "anchor": {},
+            "hreflang": "dct:language",
+            "title": "rdfs:label",
+            "length": "dct:extent"
+          },
+          "@id": "prov:influencer",
+          "@type": "@id"
+        },
+        "entity": {
+          "@context": {
+            "type": "dct:type",
+            "wasAttributedTo": {
+              "@context": {
+                "rel": {
+                  "@context": {
+                    "@base": "http://www.iana.org/assignments/relation/"
+                  },
+                  "@id": "http://www.iana.org/assignments/relation",
+                  "@type": "@id"
+                },
+                "anchor": {},
+                "hreflang": "dct:language",
+                "title": "rdfs:label",
+                "length": "dct:extent"
+              },
+              "@id": "prov:wasAttributedTo",
+              "@type": "@id"
+            },
+            "actedOnBehalfOf": {
+              "@id": "prov:actedOnBehalfOf",
+              "@type": "@id",
+              "@context": {
+                "rel": {
+                  "@context": {
+                    "@base": "http://www.iana.org/assignments/relation/"
+                  },
+                  "@id": "http://www.iana.org/assignments/relation",
+                  "@type": "@id"
+                },
+                "anchor": {},
+                "hreflang": "dct:language",
+                "title": "rdfs:label",
+                "length": "dct:extent"
+              }
+            }
+          },
+          "@id": "prov:entity",
+          "@type": "@id"
+        },
+        "agent": {
+          "@context": {
+            "rel": {
+              "@context": {
+                "@base": "http://www.iana.org/assignments/relation/"
+              },
+              "@id": "http://www.iana.org/assignments/relation",
+              "@type": "@id"
+            },
+            "anchor": {},
+            "type": "dct:type",
+            "hreflang": "dct:language",
+            "title": "rdfs:label",
+            "length": "dct:extent"
+          },
+          "@id": "prov:agent",
+          "@type": "@id"
+        }
+      },
+      "@id": "prov:qualifiedInfluence",
+      "@type": "@id"
+    },
+    "activityType": "@type",
+    "prov:type": {},
+    "endedAtTime": {
+      "@id": "prov:endedAtTime",
+      "@type": "xsd:dateTime"
+    },
+    "wasAssociatedWith": {
+      "@context": {
+        "rel": {
+          "@context": {
+            "@base": "http://www.iana.org/assignments/relation/"
+          },
+          "@id": "http://www.iana.org/assignments/relation",
+          "@type": "@id"
+        },
+        "anchor": {},
+        "type": "dct:type",
+        "hreflang": "dct:language",
+        "title": "rdfs:label",
+        "length": "dct:extent"
+      },
+      "@id": "prov:wasAssociatedWith",
+      "@type": "@id"
+    },
+    "wasInformedBy": {
+      "@id": "prov:wasInformedBy",
+      "@type": "@id"
+    },
+    "used": {
+      "@context": {
+        "type": "dct:type",
+        "wasAttributedTo": {
+          "@context": {
+            "rel": {
+              "@context": {
+                "@base": "http://www.iana.org/assignments/relation/"
+              },
+              "@id": "http://www.iana.org/assignments/relation",
+              "@type": "@id"
+            },
+            "anchor": {},
+            "hreflang": "dct:language",
+            "title": "rdfs:label",
+            "length": "dct:extent"
+          },
+          "@id": "prov:wasAttributedTo",
+          "@type": "@id"
+        },
+        "actedOnBehalfOf": {
+          "@id": "prov:actedOnBehalfOf",
+          "@type": "@id",
+          "@context": {
+            "rel": {
+              "@context": {
+                "@base": "http://www.iana.org/assignments/relation/"
+              },
+              "@id": "http://www.iana.org/assignments/relation",
+              "@type": "@id"
+            },
+            "anchor": {},
+            "hreflang": "dct:language",
+            "title": "rdfs:label",
+            "length": "dct:extent"
+          }
+        }
+      },
+      "@id": "prov:used",
+      "@type": "@id"
+    },
+    "wasStartedBy": {
+      "@context": {
+        "type": "dct:type",
+        "wasAttributedTo": {
+          "@context": {
+            "rel": {
+              "@context": {
+                "@base": "http://www.iana.org/assignments/relation/"
+              },
+              "@id": "http://www.iana.org/assignments/relation",
+              "@type": "@id"
+            },
+            "anchor": {},
+            "hreflang": "dct:language",
+            "title": "rdfs:label",
+            "length": "dct:extent"
+          },
+          "@id": "prov:wasAttributedTo",
+          "@type": "@id"
+        },
+        "actedOnBehalfOf": {
+          "@id": "prov:actedOnBehalfOf",
+          "@type": "@id",
+          "@context": {
+            "rel": {
+              "@context": {
+                "@base": "http://www.iana.org/assignments/relation/"
+              },
+              "@id": "http://www.iana.org/assignments/relation",
+              "@type": "@id"
+            },
+            "anchor": {},
+            "hreflang": "dct:language",
+            "title": "rdfs:label",
+            "length": "dct:extent"
+          }
+        }
+      },
+      "@id": "prov:wasStartedBy",
+      "@type": "@id"
+    },
+    "wasEndedBy": {
+      "@context": {
+        "type": "dct:type",
+        "wasAttributedTo": {
+          "@context": {
+            "rel": {
+              "@context": {
+                "@base": "http://www.iana.org/assignments/relation/"
+              },
+              "@id": "http://www.iana.org/assignments/relation",
+              "@type": "@id"
+            },
+            "anchor": {},
+            "hreflang": "dct:language",
+            "title": "rdfs:label",
+            "length": "dct:extent"
+          },
+          "@id": "prov:wasAttributedTo",
+          "@type": "@id"
+        },
+        "actedOnBehalfOf": {
+          "@id": "prov:actedOnBehalfOf",
+          "@type": "@id",
+          "@context": {
+            "rel": {
+              "@context": {
+                "@base": "http://www.iana.org/assignments/relation/"
+              },
+              "@id": "http://www.iana.org/assignments/relation",
+              "@type": "@id"
+            },
+            "anchor": {},
+            "hreflang": "dct:language",
+            "title": "rdfs:label",
+            "length": "dct:extent"
+          }
+        }
+      },
+      "@id": "prov:wasEndedBy",
+      "@type": "@id"
+    },
+    "invalidated": {
+      "@context": {
+        "type": "dct:type",
+        "wasAttributedTo": {
+          "@context": {
+            "rel": {
+              "@context": {
+                "@base": "http://www.iana.org/assignments/relation/"
+              },
+              "@id": "http://www.iana.org/assignments/relation",
+              "@type": "@id"
+            },
+            "anchor": {},
+            "hreflang": "dct:language",
+            "title": "rdfs:label",
+            "length": "dct:extent"
+          },
+          "@id": "prov:wasAttributedTo",
+          "@type": "@id"
+        },
+        "actedOnBehalfOf": {
+          "@id": "prov:actedOnBehalfOf",
+          "@type": "@id",
+          "@context": {
+            "rel": {
+              "@context": {
+                "@base": "http://www.iana.org/assignments/relation/"
+              },
+              "@id": "http://www.iana.org/assignments/relation",
+              "@type": "@id"
+            },
+            "anchor": {},
+            "hreflang": "dct:language",
+            "title": "rdfs:label",
+            "length": "dct:extent"
+          }
+        }
+      },
+      "@id": "prov:invalidated",
+      "@type": "@id"
+    },
+    "generated": {
+      "@context": {
+        "type": "dct:type",
+        "wasAttributedTo": {
+          "@context": {
+            "rel": {
+              "@context": {
+                "@base": "http://www.iana.org/assignments/relation/"
+              },
+              "@id": "http://www.iana.org/assignments/relation",
+              "@type": "@id"
+            },
+            "anchor": {},
+            "hreflang": "dct:language",
+            "title": "rdfs:label",
+            "length": "dct:extent"
+          },
+          "@id": "prov:wasAttributedTo",
+          "@type": "@id"
+        },
+        "actedOnBehalfOf": {
+          "@id": "prov:actedOnBehalfOf",
+          "@type": "@id",
+          "@context": {
+            "rel": {
+              "@context": {
+                "@base": "http://www.iana.org/assignments/relation/"
+              },
+              "@id": "http://www.iana.org/assignments/relation",
+              "@type": "@id"
+            },
+            "anchor": {},
+            "hreflang": "dct:language",
+            "title": "rdfs:label",
+            "length": "dct:extent"
+          }
+        }
+      },
+      "@id": "prov:generated",
+      "@type": "@id"
+    },
+    "atLocation": {
+      "@id": "prov:atLocation",
+      "@type": "@id"
+    },
+    "qualifiedUsage": {
+      "@id": "prov:qualifiedUsage",
+      "@type": "@id"
+    },
+    "qualifiedCommunication": {
+      "@id": "prov:qualifiedCommunication",
+      "@type": "@id"
+    },
+    "qualifiedStart": {
+      "@context": {
+        "entity": {
+          "@context": {
+            "type": "dct:type",
+            "has_provenance": {
+              "@context": {
+                "actedOnBehalfOf": {
+                  "@context": {
+                    "rel": {
+                      "@context": {
+                        "@base": "http://www.iana.org/assignments/relation/"
+                      },
+                      "@id": "http://www.iana.org/assignments/relation",
+                      "@type": "@id"
+                    },
+                    "anchor": {},
+                    "hreflang": "dct:language",
+                    "title": "rdfs:label",
+                    "length": "dct:extent"
+                  },
+                  "@id": "prov:actedOnBehalfOf",
+                  "@type": "@id"
+                }
+              },
+              "@id": "dct:provenance",
+              "@type": "@id"
+            },
+            "wasAttributedTo": {
+              "@context": {
+                "rel": {
+                  "@context": {
+                    "@base": "http://www.iana.org/assignments/relation/"
+                  },
+                  "@id": "http://www.iana.org/assignments/relation",
+                  "@type": "@id"
+                },
+                "anchor": {},
+                "hreflang": "dct:language",
+                "title": "rdfs:label",
+                "length": "dct:extent"
+              },
+              "@id": "prov:wasAttributedTo",
+              "@type": "@id"
+            },
+            "qualifiedAttribution": {
+              "@context": {
+                "agent": {
+                  "@context": {
+                    "actedOnBehalfOf": {
+                      "@context": {
+                        "rel": {
+                          "@context": {
+                            "@base": "http://www.iana.org/assignments/relation/"
+                          },
+                          "@id": "http://www.iana.org/assignments/relation",
+                          "@type": "@id"
+                        },
+                        "anchor": {},
+                        "hreflang": "dct:language",
+                        "title": "rdfs:label",
+                        "length": "dct:extent"
+                      },
+                      "@id": "prov:actedOnBehalfOf",
+                      "@type": "@id"
+                    }
+                  },
+                  "@id": "prov:agent",
+                  "@type": "@id"
+                }
+              },
+              "@id": "prov:qualifiedAttribution",
+              "@type": "@id"
+            }
+          },
+          "@id": "prov:entity",
+          "@type": "@id"
+        }
+      },
+      "@id": "prov:qualifiedStart",
+      "@type": "@id"
+    },
+    "qualifiedEnd": {
+      "@context": {
+        "entity": {
+          "@context": {
+            "type": "dct:type",
+            "has_provenance": {
+              "@context": {
+                "actedOnBehalfOf": {
+                  "@context": {
+                    "rel": {
+                      "@context": {
+                        "@base": "http://www.iana.org/assignments/relation/"
+                      },
+                      "@id": "http://www.iana.org/assignments/relation",
+                      "@type": "@id"
+                    },
+                    "anchor": {},
+                    "hreflang": "dct:language",
+                    "title": "rdfs:label",
+                    "length": "dct:extent"
+                  },
+                  "@id": "prov:actedOnBehalfOf",
+                  "@type": "@id"
+                }
+              },
+              "@id": "dct:provenance",
+              "@type": "@id"
+            },
+            "wasAttributedTo": {
+              "@context": {
+                "rel": {
+                  "@context": {
+                    "@base": "http://www.iana.org/assignments/relation/"
+                  },
+                  "@id": "http://www.iana.org/assignments/relation",
+                  "@type": "@id"
+                },
+                "anchor": {},
+                "hreflang": "dct:language",
+                "title": "rdfs:label",
+                "length": "dct:extent"
+              },
+              "@id": "prov:wasAttributedTo",
+              "@type": "@id"
+            },
+            "qualifiedAttribution": {
+              "@context": {
+                "agent": {
+                  "@context": {
+                    "actedOnBehalfOf": {
+                      "@context": {
+                        "rel": {
+                          "@context": {
+                            "@base": "http://www.iana.org/assignments/relation/"
+                          },
+                          "@id": "http://www.iana.org/assignments/relation",
+                          "@type": "@id"
+                        },
+                        "anchor": {},
+                        "hreflang": "dct:language",
+                        "title": "rdfs:label",
+                        "length": "dct:extent"
+                      },
+                      "@id": "prov:actedOnBehalfOf",
+                      "@type": "@id"
+                    }
+                  },
+                  "@id": "prov:agent",
+                  "@type": "@id"
+                }
+              },
+              "@id": "prov:qualifiedAttribution",
+              "@type": "@id"
+            }
+          },
+          "@id": "prov:entity",
+          "@type": "@id"
+        }
+      },
+      "@id": "prov:qualifiedEnd",
+      "@type": "@id"
+    },
+    "qualifiedAssociation": {
+      "@context": {
+        "agent": {
+          "@context": {
+            "actedOnBehalfOf": {
+              "@context": {
+                "rel": {
+                  "@context": {
+                    "@base": "http://www.iana.org/assignments/relation/"
+                  },
+                  "@id": "http://www.iana.org/assignments/relation",
+                  "@type": "@id"
+                },
+                "anchor": {},
+                "type": "dct:type",
+                "hreflang": "dct:language",
+                "title": "rdfs:label",
+                "length": "dct:extent"
+              },
+              "@id": "prov:actedOnBehalfOf",
+              "@type": "@id"
+            }
+          },
+          "@id": "prov:agent",
+          "@type": "@id"
+        }
+      },
+      "@id": "prov:qualifiedAssociation",
+      "@type": "@id"
+    },
+    "agentType": "@type",
+    "entityType": "@type",
+    "featureType": "@type",
+    "provType": "@type",
+    "Activity": "prov:Activity",
+    "ActivityInfluence": "prov:ActivityInfluence",
+    "Agent": "prov:Agent",
+    "AgentInfluence": "prov:AgentInfluence",
+    "Association": "prov:Association",
+    "Attribution": "prov:Attribution",
+    "Bundle": "prov:Bundle",
+    "Collection": "prov:Collection",
+    "Communication": "prov:Communication",
+    "Delegation": "prov:Delegation",
+    "Derivation": "prov:Derivation",
+    "EmptyCollection": "prov:EmptyCollection",
+    "End": "prov:End",
+    "Entity": "prov:Entity",
+    "EntityInfluence": "prov:EntityInfluence",
+    "Generation": "prov:Generation",
+    "Influence": "prov:Influence",
+    "InstantaneousEvent": "prov:InstantaneousEvent",
+    "Invalidation": "prov:Invalidation",
+    "Location": "prov:Location",
+    "Organization": "prov:Organization",
+    "Person": "prov:Person",
+    "Plan": "prov:Plan",
+    "PrimarySource": "prov:PrimarySource",
+    "Quotation": "prov:Quotation",
+    "Revision": "prov:Revision",
+    "Role": "prov:Role",
+    "SoftwareAgent": "prov:SoftwareAgent",
+    "Start": "prov:Start",
+    "Usage": "prov:Usage",
+    "ServiceDescription": "prov:ServiceDescription",
+    "DirectQueryService": "prov:DirectQueryService",
+    "Accept": "prov:Accept",
+    "Contribute": "prov:Contribute",
+    "Contributor": "prov:Contributor",
+    "Copyright": "prov:Copyright",
+    "Create": "prov:Create",
+    "Creator": "prov:Creator",
+    "Modify": "prov:Modify",
+    "Publish": "prov:Publish",
+    "Publisher": "prov:Publisher",
+    "Replace": "prov:Replace",
+    "RightsAssignment": "prov:RightsAssignment",
+    "RightsHolder": "prov:RightsHolder",
+    "Submit": "prov:Submit",
+    "Dictionary": "prov:Dictionary",
+    "EmptyDictionary": "prov:EmptyDictionary",
+    "KeyEntityPair": "prov:KeyEntityPair",
+    "Insertion": "prov:Insertion",
+    "Removal": "prov:Removal",
+    "atTime": {
+      "@id": "prov:atTime",
+      "@type": "xsd:dateTime"
+    },
+    "generatedAtTime": {
+      "@id": "prov:generatedAtTime",
+      "@type": "xsd:dateTime"
+    },
+    "invalidatedAtTime": {
+      "@id": "prov:invalidatedAtTime",
+      "@type": "xsd:dateTime"
+    },
+    "startedAtTime": {
+      "@id": "prov:startedAtTime",
+      "@type": "xsd:dateTime"
+    },
+    "value": "prov:value",
+    "provenanceUriTemplate": "prov:provenanceUriTemplate",
+    "pairKey": {
+      "@id": "prov:pairKey",
+      "@type": "rdfs:Literal"
+    },
+    "removedKey": {
+      "@id": "prov:removedKey",
+      "@type": "rdfs:Literal"
+    },
+    "actedOnBehalfOf": {
+      "@id": "prov:actedOnBehalfOf",
+      "@type": "@id"
+    },
+    "agent": {
+      "@id": "prov:agent",
+      "@type": "@id"
+    },
+    "alternateOf": {
+      "@id": "prov:alternateOf",
+      "@type": "@id"
+    },
+    "entity": {
+      "@id": "prov:entity",
+      "@type": "@id"
+    },
+    "hadActivity": {
+      "@id": "prov:hadActivity",
+      "@type": "@id"
+    },
+    "activity": {
+      "@id": "prov:activity",
+      "@type": "@id"
+    },
+    "hadGeneration": {
+      "@id": "prov:hadGeneration",
+      "@type": "@id"
+    },
+    "hadMember": {
+      "@id": "prov:hadMember",
+      "@type": "@id"
+    },
+    "hadPlan": {
+      "@id": "prov:hadPlan",
+      "@type": "@id"
+    },
+    "hadPrimarySource": {
+      "@id": "prov:hadPrimarySource",
+      "@type": "@id"
+    },
+    "hadRole": {
+      "@id": "prov:hadRole",
+      "@type": "@id"
+    },
+    "hadUsage": {
+      "@id": "prov:hadUsage",
+      "@type": "@id"
+    },
+    "influenced": {
+      "@id": "prov:influenced",
+      "@type": "@id"
+    },
+    "influencer": {
+      "@id": "prov:influencer",
+      "@type": "@id"
+    },
+    "qualifiedAttribution": {
+      "@id": "prov:qualifiedAttribution",
+      "@type": "@id"
+    },
+    "qualifiedDelegation": {
+      "@id": "prov:qualifiedDelegation",
+      "@type": "@id"
+    },
+    "qualifiedDerivation": {
+      "@id": "prov:qualifiedDerivation",
+      "@type": "@id"
+    },
+    "qualifiedGeneration": {
+      "@id": "prov:qualifiedGeneration",
+      "@type": "@id"
+    },
+    "qualifiedInvalidation": {
+      "@id": "prov:qualifiedInvalidation",
+      "@type": "@id"
+    },
+    "qualifiedPrimarySource": {
+      "@id": "prov:qualifiedPrimarySource",
+      "@type": "@id"
+    },
+    "qualifiedQuotation": {
+      "@id": "prov:qualifiedQuotation",
+      "@type": "@id"
+    },
+    "qualifiedRevision": {
+      "@id": "prov:qualifiedRevision",
+      "@type": "@id"
+    },
+    "specializationOf": {
+      "@id": "prov:specializationOf",
+      "@type": "@id"
+    },
+    "wasAttributedTo": {
+      "@id": "prov:wasAttributedTo",
+      "@type": "@id"
+    },
+    "wasDerivedFrom": {
+      "@id": "prov:wasDerivedFrom",
+      "@type": "@id"
+    },
+    "wasGeneratedBy": {
+      "@id": "prov:wasGeneratedBy",
+      "@type": "@id"
+    },
+    "wasInvalidatedBy": {
+      "@id": "prov:wasInvalidatedBy",
+      "@type": "@id"
+    },
+    "wasQuotedFrom": {
+      "@id": "prov:wasQuotedFrom",
+      "@type": "@id"
+    },
+    "wasRevisionOf": {
+      "@id": "prov:wasRevisionOf",
+      "@type": "@id"
+    },
+    "has_anchor": {
+      "@id": "prov:has_anchor",
+      "@type": "@id"
+    },
+    "has_provenance": {
+      "@id": "dct:provenance",
+      "@type": "@id"
+    },
+    "has_query_service": {
+      "@id": "prov:has_query_service",
+      "@type": "@id"
+    },
+    "describesService": {
+      "@id": "prov:describesService",
+      "@type": "@id"
+    },
+    "pingback": {
+      "@id": "prov:pingback",
+      "@type": "@id"
+    },
+    "dictionary": {
+      "@id": "prov:dictionary",
+      "@type": "@id"
+    },
+    "derivedByInsertionFrom": {
+      "@id": "prov:derivedByInsertionFrom",
+      "@type": "@id"
+    },
+    "derivedByRemovalFrom": {
+      "@id": "prov:derivedByRemovalFrom",
+      "@type": "@id"
+    },
+    "insertedKeyEntityPair": {
+      "@id": "prov:insertedKeyEntityPair",
+      "@type": "@id"
+    },
+    "hadDictionaryMember": {
+      "@id": "prov:hadDictionaryMember",
+      "@type": "@id"
+    },
+    "pairEntity": {
+      "@id": "prov:pairEntity",
+      "@type": "@id"
+    },
+    "qualifiedInsertion": {
+      "@id": "prov:qualifiedInsertion",
+      "@type": "@id"
+    },
+    "qualifiedRemoval": {
+      "@id": "prov:qualifiedRemoval",
+      "@type": "@id"
+    },
+    "asInBundle": {
+      "@id": "prov:asInBundle",
+      "@type": "@id"
+    },
+    "mentionOf": {
+      "@id": "prov:mentionOf",
+      "@type": "@id"
+    },
+    "name": "rdfs:label",
     "osc:workflow": {},
-    "prov": {},
     "rel": {},
     "href": {
       "@type": "@id",
@@ -1456,6 +2238,7 @@ Links to the schema:
     "w3ctime": "http://www.w3.org/2006/time#",
     "dctype": "http://purl.org/dc/dcmitype/",
     "vcard": "http://www.w3.org/2006/vcard/ns#",
+    "prov": "http://www.w3.org/ns/prov#",
     "foaf": "http://xmlns.com/foaf/0.1/",
     "thns": "https://w3id.org/ogc/stac/themes/",
     "stac": "https://w3id.org/ogc/stac/core/",

@@ -13,18 +13,14 @@
 
 <https://ogc.org/demo/ospd/water-bodies-execution> a geojson:Feature ;
     dcterms:conformsTo <http://www.opengis.net/spec/ogcapi-records-1/1.0/req/record-core> ;
-    rdfs:seeAlso [ rdfs:label "Open Science Catalog" ;
-            dcterms:format "application/json" ;
-            ns1:relation <http://www.iana.org/assignments/relation/root> ;
-            oa:hasTarget <https://example.com/open-science-catalog-metadata/catalog.json> ],
-        [ rdfs:label "Theme: Land" ;
+    rdfs:seeAlso [ rdfs:label "Theme: Land" ;
             dcterms:format "application/json" ;
             ns1:relation <http://www.iana.org/assignments/relation/related> ;
             oa:hasTarget <https://example.com/open-science-catalog-metadata/themes/land/catalog.json> ],
-        [ rdfs:label "Water Bodies Execution Outputs" ;
+        [ rdfs:label "Open Science Catalog" ;
             dcterms:format "application/json" ;
-            ns1:relation <http://www.iana.org/assignments/relation/child> ;
-            oa:hasTarget <https://example.com/open-science-catalog-metadata/products/water-bodies-execution-outputs/collection.json> ],
+            ns1:relation <http://www.iana.org/assignments/relation/root> ;
+            oa:hasTarget <https://example.com/open-science-catalog-metadata/catalog.json> ],
         [ dcterms:format "application/json" ;
             ns1:relation <http://www.iana.org/assignments/relation/self> ;
             oa:hasTarget <https://example.com/open-science-catalog-metadata/experiments/water-bodies-execution/record.json> ],
@@ -39,23 +35,27 @@
         [ rdfs:label "An EO data exploitation platform" ;
             dcterms:format "application/json" ;
             ns1:relation <http://www.iana.org/assignments/relation/service> ;
-            oa:hasTarget <https://example.com> ] ;
+            oa:hasTarget <https://example.com> ],
+        [ rdfs:label "Water Bodies Execution Outputs" ;
+            dcterms:format "application/json" ;
+            ns1:relation <http://www.iana.org/assignments/relation/child> ;
+            oa:hasTarget <https://example.com/open-science-catalog-metadata/products/water-bodies-execution-outputs/collection.json> ] ;
     :properties [ a :experiment ;
             dcterms:created "2025-01-21T18:00:00Z" ;
             dcterms:description "Experiment using the water bodies workflow." ;
             dcterms:modified "2025-01-21T18:40:00Z" ;
             dcterms:title "ESA WorldCereal Experiment" ;
-            dcat:contactPoint [ :contactInstructions "Contact via website" ;
-                    :name "A person" ;
-                    :organization "An Org" ;
-                    :position "Researcher" ;
-                    stac:roles "principal investigator" ],
-                [ :contactInstructions "SEE WEBSITE" ;
+            dcat:contactPoint [ rdfs:label "An Org" ;
+                    :contactInstructions "SEE WEBSITE" ;
                     :links [ dcterms:type "text/html" ;
                             ns1:relation <http://www.iana.org/assignments/relation/about> ;
                             oa:hasTarget <https://example.com/> ] ;
-                    :name "An Org" ;
-                    stac:roles "processor" ] ;
+                    stac:roles "processor" ],
+                [ rdfs:label "A person" ;
+                    :contactInstructions "Contact via website" ;
+                    :organization "An Org" ;
+                    :position "Researcher" ;
+                    stac:roles "principal investigator" ] ;
             dcat:license "proprietary" ;
             :version "2" ;
             rec:format [ rec:name "GeoTIFF" ] ;

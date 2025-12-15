@@ -147,12 +147,12 @@
   "name": "Building Blocks - Open Science Workflows Building Blocks",
   "abstract": "Building Blocks for FAIR Open Science - profiles of OGC API Processes and various metadata standards to support open, transparent, interoperable and reproducible scientific workflows..\n",
   "description": "This repository is initially aimed to support the [Open Science Persistent Demonstrator](https://www.ogc.org/initiatives/open-science/) pilot, but may be further developed as a set of standards with appropriate working group governance.\n",
-  "modified": "2025-12-09T09:19:40.707122",
+  "modified": "2025-12-15T09:46:04.346216",
   "tooling": {
     "bblocks-postprocess": {
-      "commitId": "\"68167baf1c7280295a0aecc42e40ac421e1a4a6d",
-      "shortCommitId": "\"68167b",
-      "date": "2025-12-03T13:13:23+00:00\""
+      "commitId": "\"0e287a8535ea70bdb748af399722b18f2d8f6788",
+      "shortCommitId": "\"0e287a",
+      "date": "2025-12-15T08:49:24+00:00\""
     }
   },
   "gitRepository": "https://github.com/ahaywardtvuk/bblocks-openscience",
@@ -185,7 +185,7 @@
       "itemClass": "model",
       "register": "ogc-incubator",
       "version": "0.1",
-      "dateOfLastChange": "2025-12-09",
+      "dateOfLastChange": "2025-12-15",
       "dependsOn": [
         "bblocks://ogc.ogc-utils.prov"
       ],
@@ -233,7 +233,7 @@
       "dateTimeAddition": "2025-10-22T15:29:12.046535",
       "register": "ogcapi-processes",
       "version": "0.1",
-      "dateOfLastChange": "2025-12-09",
+      "dateOfLastChange": "2025-12-15",
       "tags": [
         "ogcapi-processes",
         "schema"
@@ -243,8 +243,8 @@
       "itemClass": "schema",
       "shaclShapes": null,
       "dependsOn": [
-        "bblocks://ogc.ogc-utils.prov-activity",
         "bblocks://ogc.api.processes.v1.schemas.qualifiedInputValue",
+        "bblocks://ogc.ogc-utils.prov-activity",
         "bblocks://ogc.ogc-utils.prov-entity"
       ],
       "schema": [
@@ -311,7 +311,7 @@
         "bblocks://ogc.profiles.prov.cwl.provenance"
       ],
       "version": "0.1",
-      "dateOfLastChange": "2025-12-09",
+      "dateOfLastChange": "2025-12-15",
       "link": "https://github.com/opengeospatial/geodcat-ogcapi-records",
       "sources": [
         {
@@ -384,10 +384,10 @@
       "itemClass": "model",
       "register": "ogc-incubator",
       "version": "0.1",
-      "dateOfLastChange": "2025-12-09",
+      "dateOfLastChange": "2025-12-15",
       "dependsOn": [
-        "bblocks://ogc.geo.geodcat.dcat",
-        "bblocks://ogc.osc.ontology.cwlprov"
+        "bblocks://ogc.osc.ontology.cwlprov",
+        "bblocks://ogc.geo.geodcat.dcat"
       ],
       "sources": [],
       "scope": "dev",
@@ -437,15 +437,15 @@
       "itemClass": "schema",
       "register": "ogc-incubator",
       "dependsOn": [
-        "bblocks://ogc.geo.geodcat.stac.geodcat-stac-collection",
-        "bblocks://ogc.contrib.stac.extensions.osc",
         "bblocks://ogc.geo.geodcat.stac.geodcat-stac-item",
         "bblocks://ogc.geo.geodcat.geodcat-records",
+        "bblocks://ogc.geo.geodcat.stac.geodcat-stac-collection",
+        "bblocks://ogc.contrib.stac.extensions.osc",
         "bblocks://ogc.ogc-utils.prov",
         "bblocks://ogc.contrib.stac.extensions.themes"
       ],
       "version": "0.1",
-      "dateOfLastChange": "2025-12-09",
+      "dateOfLastChange": "2025-12-15",
       "sources": [
         {
           "title": "EarthCODE",
@@ -534,7 +534,7 @@
       "dateTimeAddition": "2025-10-22T15:29:12.046535",
       "register": "ogcapi-processes",
       "version": "0.1",
-      "dateOfLastChange": "2025-12-09",
+      "dateOfLastChange": "2025-12-15",
       "tags": [
         "ogcapi-processes",
         "schema"
@@ -543,8 +543,8 @@
       "itemClass": "schema",
       "shaclShapes": null,
       "dependsOn": [
-        "bblocks://ogc.ogc-utils.iri-or-curie",
-        "bblocks://ogc.api.processes.v1.schemas.execute"
+        "bblocks://ogc.api.processes.v1.schemas.execute",
+        "bblocks://ogc.ogc-utils.iri-or-curie"
       ],
       "schema": [
         {
@@ -608,11 +608,11 @@
       "register": "ogc-incubator",
       "dependsOn": [
         "bblocks://ogc.osc.geodcat-stac-earthcode.common",
-        "bblocks://ogc.ogc-utils.prov-activity",
-        "bblocks://ogc.geo.geodcat.geodcat-records"
+        "bblocks://ogc.geo.geodcat.geodcat-records",
+        "bblocks://ogc.ogc-utils.prov-activity"
       ],
       "version": "0.1",
-      "dateOfLastChange": "2025-12-09",
+      "dateOfLastChange": "2025-12-15",
       "link": "https://github.com/opengeospatial/geodcat-ogcapi-records",
       "sources": [
         {
@@ -667,7 +667,7 @@
       "sourceLdContext": "https://ahaywardtvuk.github.io/bblocks-openscience/_sources/geodcat-stac-earthcode/experiments/context.jsonld",
       "sourceFiles": "https://ahaywardtvuk.github.io/bblocks-openscience/_sources/geodcat-stac-earthcode/experiments/",
       "rdfData": [],
-      "validationPassed": true,
+      "validationPassed": false,
       "testOutputs": "https://github.com/ahaywardtvuk/bblocks-openscience/blob/master/build/tests/osc/geodcat-stac-earthcode/experiments/",
       "documentation": {
         "markdown": {
@@ -707,10 +707,11 @@
       "register": "ogc-incubator",
       "dependsOn": [
         "bblocks://ogc.osc.geodcat-stac-earthcode.common",
-        "bblocks://ogc.contrib.stac.extensions.cf"
+        "bblocks://ogc.contrib.stac.extensions.cf",
+        "bblocks://ogc.ogc-utils.prov-entity"
       ],
       "version": "0.1",
-      "dateOfLastChange": "2025-12-09",
+      "dateOfLastChange": "2025-12-15",
       "link": "https://github.com/opengeospatial/geodcat-ogcapi-records",
       "sources": [
         {
@@ -804,11 +805,14 @@
       "itemClass": "schema",
       "register": "ogc-incubator",
       "dependsOn": [
+        "bblocks://ogc.api.processes.v1.schemas.outputDescription",
+        "bblocks://ogc.geo.geodcat.geodcat-records",
+        "bblocks://ogc.ogc-utils.prov-entity",
         "bblocks://ogc.osc.geodcat-stac-earthcode.common",
-        "bblocks://ogc.geo.geodcat.geodcat-records"
+        "bblocks://ogc.api.processes.v1.schemas.inputDescription"
       ],
       "version": "0.1",
-      "dateOfLastChange": "2025-12-09",
+      "dateOfLastChange": "2025-12-15",
       "link": "https://github.com/opengeospatial/geodcat-ogcapi-records",
       "sources": [
         {
@@ -896,7 +900,7 @@
       "itemClass": "api",
       "register": "ogcapi-features",
       "version": "0.1",
-      "dateOfLastChange": "2025-12-09",
+      "dateOfLastChange": "2025-12-15",
       "sources": [
         {
           "title": "OGC API Processes",
@@ -904,8 +908,8 @@
         }
       ],
       "dependsOn": [
-        "bblocks://ogc.osc.api-profiles.processes.ipt.execute",
-        "bblocks://ogc.osc.api-profiles.processes.ipt.results"
+        "bblocks://ogc.osc.api-profiles.processes.ipt.results",
+        "bblocks://ogc.osc.api-profiles.processes.ipt.execute"
       ],
       "tags": [
         "ogcapi-processes",
@@ -960,7 +964,7 @@
         "bblocks://ogc.osc.application-package"
       ],
       "version": "0.1",
-      "dateOfLastChange": "2025-12-09",
+      "dateOfLastChange": "2025-12-15",
       "link": "https://github.com/opengeospatial/ogcapi-processes",
       "sources": [],
       "scope": "dev",
@@ -1014,13 +1018,13 @@
       "itemClass": "api",
       "register": "ogc-incubator",
       "dependsOn": [
-        "bblocks://ogc.osc.geodcat-stac-earthcode.workflows",
+        "bblocks://ogc.osc.geodcat-stac-earthcode.products",
         "bblocks://ogc.osc.api-profiles.processes.workflow",
-        "bblocks://ogc.osc.geodcat-stac-earthcode.experiments",
-        "bblocks://ogc.osc.geodcat-stac-earthcode.products"
+        "bblocks://ogc.osc.geodcat-stac-earthcode.workflows",
+        "bblocks://ogc.osc.geodcat-stac-earthcode.experiments"
       ],
       "version": "0.1",
-      "dateOfLastChange": "2025-12-09",
+      "dateOfLastChange": "2025-12-15",
       "link": "https://github.com/opengeospatial/ogcapi-processes",
       "sources": [],
       "scope": "dev",

@@ -2,7 +2,7 @@
   "title": "Validation report for ogc.osc.geodcat-stac-earthcode.products - EarthCODE Product",
   "bblockName": "EarthCODE Product",
   "bblockId": "ogc.osc.geodcat-stac-earthcode.products",
-  "generated": "2025-12-09T09:20:05.925403+00:00",
+  "generated": "2025-12-15T09:46:20.651515+00:00",
   "result": true,
   "items": [
     {
@@ -545,7 +545,7 @@
           "entries": [
             {
               "isError": false,
-              "message": "Using example_1_1.json from examples"
+              "message": "Using example_1_1.json (example_1_1) from examples"
             },
             {
               "op": "jsonld-uplift",
@@ -623,7 +623,7 @@
           "entries": [
             {
               "isError": false,
-              "message": "Using example_2_1.json from examples"
+              "message": "Using example_2_1.json (example_2_1) from examples"
             },
             {
               "op": "jsonld-uplift",
@@ -640,7 +640,7 @@
               "op": "ttl-create",
               "empty": false,
               "filename": "example_2_1.ttl",
-              "size": 75,
+              "size": 74,
               "isError": false,
               "message": "Output Turtle example_2_1.ttl created"
             }
