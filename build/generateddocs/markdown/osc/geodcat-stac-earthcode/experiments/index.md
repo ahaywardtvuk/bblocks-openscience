@@ -132,7 +132,7 @@ This building block shows a possible profile of GeoDCAT supporting semantic anno
 #### jsonld
 ```jsonld
 {
-  "@context": "https://ogcincubator.github.io/bblocks-openscience/build/annotated/osc/geodcat-stac-earthcode/experiments/context.jsonld",
+  "@context": "https://ahaywardtvuk.github.io/bblocks-openscience/build/annotated/osc/geodcat-stac-earthcode/experiments/context.jsonld",
   "id": "polaris-experiment",
   "type": "Feature",
   "conformsTo": [
@@ -243,8 +243,8 @@ This building block shows a possible profile of GeoDCAT supporting semantic anno
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix geojson: <https://purl.org/geojson/vocab#> .
-@prefix ns1: <http://www.iana.org/assignments/> .
-@prefix ns2: <osc:> .
+@prefix ns1: <osc:> .
+@prefix ns2: <http://www.iana.org/assignments/> .
 @prefix oa: <http://www.w3.org/ns/oa#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix rec: <https://www.opengis.net/def/ogc-api/records/> .
@@ -264,7 +264,7 @@ This building block shows a possible profile of GeoDCAT supporting semantic anno
             dcat:contactPoint [ rdfs:label "EarthCODE Demo" ;
                     wfprov:contactInstructions "Contact via EarthCODE" ;
                     wfprov:links [ dcterms:type "text/html" ;
-                            ns1:relation <http://www.iana.org/assignments/relation/about> ;
+                            ns2:relation <http://www.iana.org/assignments/relation/about> ;
                             oa:hasTarget <https://opensciencedata.esa.int/> ] ;
                     wfprov:organization "EarthCODE" ;
                     stac:roles "host" ] ;
@@ -274,38 +274,38 @@ This building block shows a possible profile of GeoDCAT supporting semantic anno
             rec:format [ rec:name "GeoTIFF" ] ;
             rec:themes [ thns:concepts [ thns:id "oceans"^^xsd:string ] ;
                     thns:scheme "https://github.com/stac-extensions/osc#theme" ] ;
-            ns2:workflow "polaris-workflow" ] ;
-    rdfs:seeAlso [ rdfs:label "Workflow: POLARIS" ;
+            ns1:workflow "polaris-workflow" ] ;
+    rdfs:seeAlso [ rdfs:label "Experiments" ;
             dcterms:format "application/json" ;
-            ns1:relation <http://www.iana.org/assignments/relation/related> ;
-            oa:hasTarget <https://ogc.org/workflows/polaris-workflow/record.json> ],
+            ns2:relation <http://www.iana.org/assignments/relation/parent> ;
+            oa:hasTarget <https://ogc.org/demo/catalog.json> ],
+        [ dcterms:format "application/json" ;
+            ns2:relation <http://www.iana.org/assignments/relation/self> ;
+            oa:hasTarget <https://esa-earthcode.github.io/open-science-catalog-metadata/experiments/polaris-experiment/item.json> ],
         [ rdfs:label "Theme: Oceans" ;
             dcterms:format "application/json" ;
-            ns1:relation <http://www.iana.org/assignments/relation/related> ;
+            ns2:relation <http://www.iana.org/assignments/relation/related> ;
             oa:hasTarget <https://ogc.org/themes/oceans/catalog.json> ],
         [ rdfs:label "POLARIS" ;
             dcterms:format "application/json" ;
-            ns1:relation <http://www.iana.org/assignments/relation/child> ;
+            ns2:relation <http://www.iana.org/assignments/relation/child> ;
             oa:hasTarget <https://ogc.org/products/polaris/collection.json> ],
-        [ rdfs:label "Input parameters" ;
-            dcterms:format "application/yaml" ;
-            ns1:relation <http://www.iana.org/assignments/relation/input> ;
-            oa:hasTarget <https://ogc.org/demo/ospd/input.yaml> ],
-        [ rdfs:label "Experiments" ;
+        [ rdfs:label "Workflow: POLARIS" ;
             dcterms:format "application/json" ;
-            ns1:relation <http://www.iana.org/assignments/relation/parent> ;
-            oa:hasTarget <https://ogc.org/demo/catalog.json> ],
-        [ dcterms:format "application/json" ;
-            ns1:relation <http://www.iana.org/assignments/relation/self> ;
-            oa:hasTarget <https://esa-earthcode.github.io/open-science-catalog-metadata/experiments/polaris-experiment/item.json> ],
-        [ rdfs:label "Execution environment" ;
-            dcterms:format "application/yaml" ;
-            ns1:relation <http://www.iana.org/assignments/relation/environment> ;
-            oa:hasTarget <https://ogc.org/demo/ospd/environment.yaml> ],
+            ns2:relation <http://www.iana.org/assignments/relation/related> ;
+            oa:hasTarget <https://ogc.org/workflows/polaris-workflow/record.json> ],
         [ rdfs:label "Open Science Catalog" ;
             dcterms:format "application/json" ;
-            ns1:relation <http://www.iana.org/assignments/relation/root> ;
-            oa:hasTarget <https://ogc.org/catalog.json> ] .
+            ns2:relation <http://www.iana.org/assignments/relation/root> ;
+            oa:hasTarget <https://ogc.org/catalog.json> ],
+        [ rdfs:label "Execution environment" ;
+            dcterms:format "application/yaml" ;
+            ns2:relation <http://www.iana.org/assignments/relation/environment> ;
+            oa:hasTarget <https://ogc.org/demo/ospd/environment.yaml> ],
+        [ rdfs:label "Input parameters" ;
+            dcterms:format "application/yaml" ;
+            ns2:relation <http://www.iana.org/assignments/relation/input> ;
+            oa:hasTarget <https://ogc.org/demo/ospd/input.yaml> ] .
 
 
 ```
@@ -422,7 +422,7 @@ This building block shows a possible profile of GeoDCAT supporting semantic anno
 #### jsonld
 ```jsonld
 {
-  "@context": "https://ogcincubator.github.io/bblocks-openscience/build/annotated/osc/geodcat-stac-earthcode/experiments/context.jsonld",
+  "@context": "https://ahaywardtvuk.github.io/bblocks-openscience/build/annotated/osc/geodcat-stac-earthcode/experiments/context.jsonld",
   "id": "water-bodies-execution",
   "type": "Feature",
   "conformsTo": [
@@ -531,8 +531,8 @@ This building block shows a possible profile of GeoDCAT supporting semantic anno
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix geojson: <https://purl.org/geojson/vocab#> .
-@prefix ns1: <osc:> .
-@prefix ns2: <http://www.iana.org/assignments/> .
+@prefix ns1: <http://www.iana.org/assignments/> .
+@prefix ns2: <osc:> .
 @prefix oa: <http://www.w3.org/ns/oa#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix rec: <https://www.opengis.net/def/ogc-api/records/> .
@@ -549,49 +549,49 @@ This building block shows a possible profile of GeoDCAT supporting semantic anno
             dcterms:modified "2025-01-21T18:40:00Z" ;
             dcterms:title "ESA WorldCereal Experiment" ;
             wfprov:version "2" ;
-            dcat:contactPoint [ rdfs:label "A person" ;
+            dcat:contactPoint [ rdfs:label "An Org" ;
+                    wfprov:contactInstructions "SEE WEBSITE" ;
+                    wfprov:links [ dcterms:type "text/html" ;
+                            ns1:relation <http://www.iana.org/assignments/relation/about> ;
+                            oa:hasTarget <https://example.com/> ] ;
+                    stac:roles "processor" ],
+                [ rdfs:label "A person" ;
                     wfprov:contactInstructions "Contact via website" ;
                     wfprov:organization "An Org" ;
                     wfprov:position "Researcher" ;
-                    stac:roles "principal investigator" ],
-                [ rdfs:label "An Org" ;
-                    wfprov:contactInstructions "SEE WEBSITE" ;
-                    wfprov:links [ dcterms:type "text/html" ;
-                            ns2:relation <http://www.iana.org/assignments/relation/about> ;
-                            oa:hasTarget <https://example.com/> ] ;
-                    stac:roles "processor" ] ;
+                    stac:roles "principal investigator" ] ;
             dcat:license "proprietary" ;
             rec:format [ rec:name "GeoTIFF" ] ;
             rec:themes [ thns:concepts [ thns:id "land"^^xsd:string ] ;
                     thns:scheme "https://github.com/stac-extensions/osc#theme" ] ;
-            ns1:workflow "waterbodies" ] ;
+            ns2:workflow "waterbodies" ] ;
     rdfs:seeAlso [ rdfs:label "Water Bodies Execution Outputs" ;
             dcterms:format "application/json" ;
-            ns2:relation <http://www.iana.org/assignments/relation/child> ;
+            ns1:relation <http://www.iana.org/assignments/relation/child> ;
             oa:hasTarget <https://example.com/open-science-catalog-metadata/products/water-bodies-execution-outputs/collection.json> ],
-        [ rdfs:label "Workflow: Water Bodies" ;
-            dcterms:format "application/json" ;
-            ns2:relation <http://www.iana.org/assignments/relation/related> ;
-            oa:hasTarget <https://ogc.org/workflows/waterbodies/record.json> ],
-        [ rdfs:label "Experiments" ;
-            dcterms:format "application/json" ;
-            ns2:relation <http://www.iana.org/assignments/relation/parent> ;
-            oa:hasTarget <https://example.com/open-science-catalog-metadata/experiments/catalog.json> ],
-        [ rdfs:label "Theme: Land" ;
-            dcterms:format "application/json" ;
-            ns2:relation <http://www.iana.org/assignments/relation/related> ;
-            oa:hasTarget <https://example.com/open-science-catalog-metadata/themes/land/catalog.json> ],
-        [ dcterms:format "application/json" ;
-            ns2:relation <http://www.iana.org/assignments/relation/self> ;
-            oa:hasTarget <https://example.com/open-science-catalog-metadata/experiments/water-bodies-execution/record.json> ],
         [ rdfs:label "Open Science Catalog" ;
             dcterms:format "application/json" ;
-            ns2:relation <http://www.iana.org/assignments/relation/root> ;
+            ns1:relation <http://www.iana.org/assignments/relation/root> ;
             oa:hasTarget <https://example.com/open-science-catalog-metadata/catalog.json> ],
+        [ rdfs:label "Theme: Land" ;
+            dcterms:format "application/json" ;
+            ns1:relation <http://www.iana.org/assignments/relation/related> ;
+            oa:hasTarget <https://example.com/open-science-catalog-metadata/themes/land/catalog.json> ],
+        [ dcterms:format "application/json" ;
+            ns1:relation <http://www.iana.org/assignments/relation/self> ;
+            oa:hasTarget <https://example.com/open-science-catalog-metadata/experiments/water-bodies-execution/record.json> ],
+        [ rdfs:label "Workflow: Water Bodies" ;
+            dcterms:format "application/json" ;
+            ns1:relation <http://www.iana.org/assignments/relation/related> ;
+            oa:hasTarget <https://ogc.org/workflows/waterbodies/record.json> ],
         [ rdfs:label "An EO data exploitation platform" ;
             dcterms:format "application/json" ;
-            ns2:relation <http://www.iana.org/assignments/relation/service> ;
-            oa:hasTarget <https://example.com> ] .
+            ns1:relation <http://www.iana.org/assignments/relation/service> ;
+            oa:hasTarget <https://example.com> ],
+        [ rdfs:label "Experiments" ;
+            dcterms:format "application/json" ;
+            ns1:relation <http://www.iana.org/assignments/relation/parent> ;
+            oa:hasTarget <https://example.com/open-science-catalog-metadata/experiments/catalog.json> ] .
 
 
 ```
@@ -785,7 +785,7 @@ Some notes:
 #### jsonld
 ```jsonld
 {
-  "@context": "https://ogcincubator.github.io/bblocks-openscience/build/annotated/osc/geodcat-stac-earthcode/experiments/context.jsonld",
+  "@context": "https://ahaywardtvuk.github.io/bblocks-openscience/build/annotated/osc/geodcat-stac-earthcode/experiments/context.jsonld",
   "id": "water-bodies-execution",
   "type": "Feature",
   "conformsTo": [
@@ -950,8 +950,8 @@ Some notes:
 @prefix dcat: <http://www.w3.org/ns/dcat#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix geojson: <https://purl.org/geojson/vocab#> .
-@prefix ns1: <http://www.iana.org/assignments/> .
-@prefix ns2: <osc:> .
+@prefix ns1: <osc:> .
+@prefix ns2: <http://www.iana.org/assignments/> .
 @prefix oa: <http://www.w3.org/ns/oa#> .
 @prefix prov: <http://www.w3.org/ns/prov#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -978,59 +978,59 @@ Some notes:
     wfprov:describedByWorkflow "https://example.com/workflows/waterbodies/record.json" ;
     wfprov:properties <https://ogc.org/demo/ospd/water-bodies-execution> ;
     wfprov:usedInput [ a wfprov:Artifact ;
+            wfprov:data "EPSG:4326" ;
+            wfprov:describedByParameter "epsg" ],
+        [ a wfprov:Artifact ;
+            wfprov:data "-121.399,39.834,-120.74,40.472" ;
+            wfprov:describedByParameter "aoi" ],
+        [ a wfprov:Artifact ;
             wfprov:describedByParameter "stac_items" ;
             prov:hadMember <https://earth-search.aws.element84.com/v0/collections/sentinel-s2-l2a-cogs/items/S2A_10TFK_20220524_0_L2A>,
                 <https://earth-search.aws.element84.com/v0/collections/sentinel-s2-l2a-cogs/items/S2B_10TFK_20210713_0_L2A> ],
         [ a wfprov:Artifact ;
             wfprov:data "green",
                 "nir" ;
-            wfprov:describedByParameter "bands" ],
-        [ a wfprov:Artifact ;
-            wfprov:data "EPSG:4326" ;
-            wfprov:describedByParameter "epsg" ],
-        [ a wfprov:Artifact ;
-            wfprov:data "-121.399,39.834,-120.74,40.472" ;
-            wfprov:describedByParameter "aoi" ] ;
+            wfprov:describedByParameter "bands" ] ;
     wfprov:version "2" ;
     wfprov:wasEnactedBy <https://ogc.org/demo/ospd/eo-data-platform> ;
-    rdfs:seeAlso [ rdfs:label "Water Bodies Execution Outputs" ;
+    rdfs:seeAlso [ rdfs:label "Experiments" ;
             dcterms:format "application/json" ;
-            ns1:relation <http://www.iana.org/assignments/relation/child> ;
-            oa:hasTarget <https://example.com/open-science-catalog-metadata/products/water-bodies-execution-outputs/collection.json> ],
-        [ rdfs:label "Experiments" ;
-            dcterms:format "application/json" ;
-            ns1:relation <http://www.iana.org/assignments/relation/parent> ;
+            ns2:relation <http://www.iana.org/assignments/relation/parent> ;
             oa:hasTarget <https://example.com/open-science-catalog-metadata/experiments/catalog.json> ],
-        [ rdfs:label "Workflow: Water Bodies" ;
-            dcterms:format "application/json" ;
-            ns1:relation <http://www.iana.org/assignments/relation/related> ;
-            oa:hasTarget <https://example.com/open-science-catalog-metadata/workflows/waterbodies/record.json> ],
-        [ rdfs:label "An EO data exploitation platform" ;
-            dcterms:format "application/json" ;
-            ns1:relation <http://www.iana.org/assignments/relation/service> ;
-            oa:hasTarget <https://example.com> ],
         [ dcterms:format "application/json" ;
-            ns1:relation <http://www.iana.org/assignments/relation/self> ;
+            ns2:relation <http://www.iana.org/assignments/relation/self> ;
             oa:hasTarget <https://example.com/open-science-catalog-metadata/experiments/water-bodies-execution/record.json> ],
-        [ rdfs:label "Theme: Land" ;
-            dcterms:format "application/json" ;
-            ns1:relation <http://www.iana.org/assignments/relation/related> ;
-            oa:hasTarget <https://example.com/open-science-catalog-metadata/themes/land/catalog.json> ],
         [ rdfs:label "Open Science Catalog" ;
             dcterms:format "application/json" ;
-            ns1:relation <http://www.iana.org/assignments/relation/root> ;
-            oa:hasTarget <https://example.com/open-science-catalog-metadata/catalog.json> ] ;
-    dcat:contactPoint [ rdfs:label "An Org" ;
-            wfprov:contactInstructions "SEE WEBSITE" ;
-            wfprov:links [ dcterms:type "text/html" ;
-                    ns1:relation <http://www.iana.org/assignments/relation/about> ;
-                    oa:hasTarget <https://example.com/> ] ;
-            stac:roles "processor" ],
-        [ rdfs:label "A person" ;
+            ns2:relation <http://www.iana.org/assignments/relation/root> ;
+            oa:hasTarget <https://example.com/open-science-catalog-metadata/catalog.json> ],
+        [ rdfs:label "Water Bodies Execution Outputs" ;
+            dcterms:format "application/json" ;
+            ns2:relation <http://www.iana.org/assignments/relation/child> ;
+            oa:hasTarget <https://example.com/open-science-catalog-metadata/products/water-bodies-execution-outputs/collection.json> ],
+        [ rdfs:label "Workflow: Water Bodies" ;
+            dcterms:format "application/json" ;
+            ns2:relation <http://www.iana.org/assignments/relation/related> ;
+            oa:hasTarget <https://example.com/open-science-catalog-metadata/workflows/waterbodies/record.json> ],
+        [ rdfs:label "Theme: Land" ;
+            dcterms:format "application/json" ;
+            ns2:relation <http://www.iana.org/assignments/relation/related> ;
+            oa:hasTarget <https://example.com/open-science-catalog-metadata/themes/land/catalog.json> ],
+        [ rdfs:label "An EO data exploitation platform" ;
+            dcterms:format "application/json" ;
+            ns2:relation <http://www.iana.org/assignments/relation/service> ;
+            oa:hasTarget <https://example.com> ] ;
+    dcat:contactPoint [ rdfs:label "A person" ;
             wfprov:contactInstructions "Contact via website" ;
             wfprov:organization "An Org" ;
             wfprov:position "Researcher" ;
-            stac:roles "principal investigator" ] ;
+            stac:roles "principal investigator" ],
+        [ rdfs:label "An Org" ;
+            wfprov:contactInstructions "SEE WEBSITE" ;
+            wfprov:links [ dcterms:type "text/html" ;
+                    ns2:relation <http://www.iana.org/assignments/relation/about> ;
+                    oa:hasTarget <https://example.com/> ] ;
+            stac:roles "processor" ] ;
     dcat:license "proprietary" ;
     prov:endedAtTime "2025-01-21T17:59:50+00:00"^^xsd:dateTime ;
     prov:generated <https://example.com/open-science-catalog-metadata/products/water-bodies-execution-outputs/collection.json> ;
@@ -1042,7 +1042,7 @@ Some notes:
     rec:format [ rec:name "GeoTIFF" ] ;
     rec:themes [ thns:concepts [ thns:id "land"^^xsd:string ] ;
             thns:scheme "https://github.com/stac-extensions/osc#theme" ] ;
-    ns2:workflow "waterbodies" .
+    ns1:workflow "waterbodies" .
 
 
 ```
@@ -1053,7 +1053,7 @@ Some notes:
 $schema: https://json-schema.org/draft/2020-12/schema
 description: EarthCode Experiment
 allOf:
-- $ref: https://ogcincubator.github.io/bblocks-openscience/build/annotated/osc/geodcat-stac-earthcode/common/schema.yaml
+- $ref: https://ahaywardtvuk.github.io/bblocks-openscience/build/annotated/osc/geodcat-stac-earthcode/common/schema.yaml
 - $ref: https://ogcincubator.github.io/geodcat-ogcapi-records/build/annotated/geo/geodcat/geodcat-records/schema.yaml
 properties:
   properties:
@@ -1064,7 +1064,7 @@ properties:
     - osc:workflow
     properties:
       osc:workflow:
-        $ref: https://ogcincubator.github.io/bblocks-openscience/build/annotated/osc/geodcat-stac-earthcode/common/schema.yaml#/$defs/osc:workflow
+        $ref: https://ahaywardtvuk.github.io/bblocks-openscience/build/annotated/osc/geodcat-stac-earthcode/common/schema.yaml#/$defs/osc:workflow
   links:
     type: array
     items:
@@ -1085,14 +1085,14 @@ properties:
         properties:
           rel:
             const: environment
-      - $ref: https://ogcincubator.github.io/bblocks-openscience/build/annotated/osc/geodcat-stac-earthcode/common/schema.yaml#/$defs/via_links
+      - $ref: https://ahaywardtvuk.github.io/bblocks-openscience/build/annotated/osc/geodcat-stac-earthcode/common/schema.yaml#/$defs/via_links
 
 ```
 
 Links to the schema:
 
-* YAML version: [schema.yaml](https://ogcincubator.github.io/bblocks-openscience/build/annotated/osc/geodcat-stac-earthcode/experiments/schema.json)
-* JSON version: [schema.json](https://ogcincubator.github.io/bblocks-openscience/build/annotated/osc/geodcat-stac-earthcode/experiments/schema.yaml)
+* YAML version: [schema.yaml](https://ahaywardtvuk.github.io/bblocks-openscience/build/annotated/osc/geodcat-stac-earthcode/experiments/schema.json)
+* JSON version: [schema.json](https://ahaywardtvuk.github.io/bblocks-openscience/build/annotated/osc/geodcat-stac-earthcode/experiments/schema.yaml)
 
 
 # JSON-LD Context
@@ -2279,7 +2279,7 @@ Links to the schema:
 ```
 
 You can find the full JSON-LD context here:
-[context.jsonld](https://ogcincubator.github.io/bblocks-openscience/build/annotated/osc/geodcat-stac-earthcode/experiments/context.jsonld)
+[context.jsonld](https://ahaywardtvuk.github.io/bblocks-openscience/build/annotated/osc/geodcat-stac-earthcode/experiments/context.jsonld)
 
 ## Sources
 
@@ -2293,6 +2293,6 @@ You can find the full JSON-LD context here:
 
 The source code for this Building Block can be found in the following repository:
 
-* URL: [https://github.com/ogcincubator/bblocks-openscience](https://github.com/ogcincubator/bblocks-openscience)
+* URL: [https://github.com/ahaywardtvuk/bblocks-openscience](https://github.com/ahaywardtvuk/bblocks-openscience)
 * Path: `_sources/geodcat-stac-earthcode/experiments`
 

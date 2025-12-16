@@ -181,7 +181,7 @@ The polarwarp algorithm geolocates, aligns, and warps satellite SAR images using
 #### jsonld
 ```jsonld
 {
-  "@context": "https://ogcincubator.github.io/bblocks-openscience/build/annotated/osc/geodcat-stac-earthcode/workflows/context.jsonld",
+  "@context": "https://ahaywardtvuk.github.io/bblocks-openscience/build/annotated/osc/geodcat-stac-earthcode/workflows/context.jsonld",
   "id": "polarwarp",
   "type": "Feature",
   "conformsTo": [
@@ -349,20 +349,18 @@ The polarwarp algorithm geolocates, aligns, and warps satellite SAR images using
     dcterms:conformsTo <http://www.opengis.net/spec/ogcapi-records-1/1.0/req/record-core>,
         <https://raw.githubusercontent.com/EOEPCA/metadata-profile/refs/heads/1.0/schemas/application-type-argo-workflow>,
         <https://stac-extensions.github.io/application/v0.1.0/schema.json> ;
-    rdfs:seeAlso [ rdfs:label "EOxHub Workspaces" ;
-            ns2:platform_supports "argo-workflow" ;
-            ns2:preferred_app "argo" ;
-            dcterms:type "text/html" ;
-            ns1:relation <http://www.iana.org/assignments/relation/application-originating-platform> ;
-            oa:hasTarget <https://workspace.cif.hub-otc.eox.at/> ],
+    rdfs:seeAlso [ dcterms:type "application/json" ;
+            ns1:relation <http://www.iana.org/assignments/relation/self> ;
+            oa:hasTarget <https://esa-earthcode.github.io/open-science-catalog-metadata/workflows/polarwarp/record.json> ],
         [ rdfs:label "Trigger workflow via API provided by pygeoapi" ;
             dcterms:type "text/html" ;
             ns1:relation <http://www.iana.org/assignments/relation/related> ;
             oa:hasTarget <https://harshness-map.gtif.eox.at/processes/execute-polarwarp-gcps> ],
-        [ rdfs:label "Open Science Catalog" ;
-            dcterms:type "application/json" ;
-            ns1:relation <http://www.iana.org/assignments/relation/root> ;
-            oa:hasTarget <https://ogc.org/catalog.json> ],
+        [ rdfs:label "Git source repository" ;
+            ns1:relation <http://www.iana.org/assignments/relation/vcs> ;
+            oa:hasTarget <https://github.com/gtif-cerulean/polarwarp.git> ;
+            ns3:branch "main" ;
+            ns3:type "git" ],
         [ rdfs:label "Project: Cerulean Information Factory" ;
             dcterms:type "application/json" ;
             ns1:relation <http://www.iana.org/assignments/relation/related> ;
@@ -371,10 +369,24 @@ The polarwarp algorithm geolocates, aligns, and warps satellite SAR images using
             dcterms:type "application/json" ;
             ns1:relation <http://www.iana.org/assignments/relation/related> ;
             oa:hasTarget <https://ogc.org/themes/cryosphere/catalog.json> ],
-        [ rdfs:label "Theme: Oceans" ;
+        [ rdfs:label "EOxHub Workspaces" ;
+            ns2:platform_supports "argo-workflow" ;
+            ns2:preferred_app "argo" ;
+            dcterms:type "text/html" ;
+            ns1:relation <http://www.iana.org/assignments/relation/application-originating-platform> ;
+            oa:hasTarget <https://workspace.cif.hub-otc.eox.at/> ],
+        [ rdfs:label "Open Science Catalog" ;
             dcterms:type "application/json" ;
-            ns1:relation <http://www.iana.org/assignments/relation/related> ;
-            oa:hasTarget <https://ogc.org/themes/oceans/catalog.json> ],
+            ns1:relation <http://www.iana.org/assignments/relation/root> ;
+            oa:hasTarget <https://ogc.org/catalog.json> ],
+        [ rdfs:label "Polarwarp" ;
+            dcterms:type "application/json" ;
+            ns1:relation <http://www.iana.org/assignments/relation/child> ;
+            oa:hasTarget <https://ogc.org/experiments/polarwarp/record.json> ],
+        [ rdfs:label "Workflows" ;
+            dcterms:type "application/json" ;
+            ns1:relation <http://www.iana.org/assignments/relation/parent> ;
+            oa:hasTarget <https://ogc.org/demo/catalog.json> ],
         [ rdfs:label "Polarwarp workflow" ;
             ns2:container true ;
             ns2:language "Python" ;
@@ -383,22 +395,10 @@ The polarwarp algorithm geolocates, aligns, and warps satellite SAR images using
             dcterms:type "application/x-argo-workflow-yaml" ;
             ns1:relation <http://www.iana.org/assignments/relation/application> ;
             oa:hasTarget <https://github.com/gtif-cerulean/polarwarp/blob/main/workflow.yml> ],
-        [ rdfs:label "Polarwarp" ;
+        [ rdfs:label "Theme: Oceans" ;
             dcterms:type "application/json" ;
-            ns1:relation <http://www.iana.org/assignments/relation/child> ;
-            oa:hasTarget <https://ogc.org/experiments/polarwarp/record.json> ],
-        [ dcterms:type "application/json" ;
-            ns1:relation <http://www.iana.org/assignments/relation/self> ;
-            oa:hasTarget <https://esa-earthcode.github.io/open-science-catalog-metadata/workflows/polarwarp/record.json> ],
-        [ rdfs:label "Git source repository" ;
-            ns1:relation <http://www.iana.org/assignments/relation/vcs> ;
-            oa:hasTarget <https://github.com/gtif-cerulean/polarwarp.git> ;
-            ns3:branch "main" ;
-            ns3:type "git" ],
-        [ rdfs:label "Workflows" ;
-            dcterms:type "application/json" ;
-            ns1:relation <http://www.iana.org/assignments/relation/parent> ;
-            oa:hasTarget <https://ogc.org/demo/catalog.json> ] .
+            ns1:relation <http://www.iana.org/assignments/relation/related> ;
+            oa:hasTarget <https://ogc.org/themes/oceans/catalog.json> ] .
 
 
 ```
@@ -517,7 +517,7 @@ The Polar Operational Limit Assessment Risk Indexing System (POLARIS) is a metho
 #### jsonld
 ```jsonld
 {
-  "@context": "https://ogcincubator.github.io/bblocks-openscience/build/annotated/osc/geodcat-stac-earthcode/workflows/context.jsonld",
+  "@context": "https://ahaywardtvuk.github.io/bblocks-openscience/build/annotated/osc/geodcat-stac-earthcode/workflows/context.jsonld",
   "id": "polaris-workflow",
   "type": "Feature",
   "conformsTo": [
@@ -632,18 +632,13 @@ The Polar Operational Limit Assessment Risk Indexing System (POLARIS) is a metho
 
 <https://ogc.org/demo/ospd/polaris-workflow> a geojson:Feature ;
     dcterms:conformsTo <http://www.opengis.net/spec/ogcapi-records-1/1.0/req/record-core> ;
-    rdfs:seeAlso [ rdfs:label "OGC Application Package" ;
-            dcterms:type "application/json" ;
-            ns1:relation <http://www.iana.org/assignments/relation/application> ;
-            oa:hasTarget <https://github.com/gtif-cerulean/cerulean-catalog.git> ],
-        [ rdfs:label "Theme: Oceans" ;
+    rdfs:seeAlso [ rdfs:label "Theme: Oceans" ;
             dcterms:type "application/json" ;
             ns1:relation <http://www.iana.org/assignments/relation/related> ;
             oa:hasTarget <https://ogc.org/themes/oceans/catalog.json> ],
-        [ rdfs:label "POLARIS" ;
-            dcterms:type "application/json" ;
-            ns1:relation <http://www.iana.org/assignments/relation/child> ;
-            oa:hasTarget <https://ogc.org/experiments/polaris-experiment/record.json> ],
+        [ dcterms:type "application/json" ;
+            ns1:relation <http://www.iana.org/assignments/relation/self> ;
+            oa:hasTarget <https://esa-earthcode.github.io/open-science-catalog-metadata/workflows/polaris-workflow/record.json> ],
         [ rdfs:label "Project: POLARIS" ;
             dcterms:type "application/json" ;
             ns1:relation <http://www.iana.org/assignments/relation/related> ;
@@ -652,17 +647,22 @@ The Polar Operational Limit Assessment Risk Indexing System (POLARIS) is a metho
             dcterms:type "application/json" ;
             ns1:relation <http://www.iana.org/assignments/relation/git> ;
             oa:hasTarget <https://github.com/gtif-cerulean/cerulean-catalog.git> ],
-        [ rdfs:label "Workflows" ;
+        [ rdfs:label "OGC Application Package" ;
             dcterms:type "application/json" ;
-            ns1:relation <http://www.iana.org/assignments/relation/parent> ;
-            oa:hasTarget <https://ogc.org/demo/catalog.json> ],
-        [ dcterms:type "application/json" ;
-            ns1:relation <http://www.iana.org/assignments/relation/self> ;
-            oa:hasTarget <https://esa-earthcode.github.io/open-science-catalog-metadata/workflows/polaris-workflow/record.json> ],
+            ns1:relation <http://www.iana.org/assignments/relation/application> ;
+            oa:hasTarget <https://github.com/gtif-cerulean/cerulean-catalog.git> ],
         [ rdfs:label "Open Science Catalog" ;
             dcterms:type "application/json" ;
             ns1:relation <http://www.iana.org/assignments/relation/root> ;
-            oa:hasTarget <https://ogc.org/catalog.json> ] .
+            oa:hasTarget <https://ogc.org/catalog.json> ],
+        [ rdfs:label "POLARIS" ;
+            dcterms:type "application/json" ;
+            ns1:relation <http://www.iana.org/assignments/relation/child> ;
+            oa:hasTarget <https://ogc.org/experiments/polaris-experiment/record.json> ],
+        [ rdfs:label "Workflows" ;
+            dcterms:type "application/json" ;
+            ns1:relation <http://www.iana.org/assignments/relation/parent> ;
+            oa:hasTarget <https://ogc.org/demo/catalog.json> ] .
 
 
 ```
@@ -759,7 +759,7 @@ not accessible at https://osc-staging.earthcode.eox.at/workflows/waterbodies/rec
 #### jsonld
 ```jsonld
 {
-  "@context": "https://ogcincubator.github.io/bblocks-openscience/build/annotated/osc/geodcat-stac-earthcode/workflows/context.jsonld",
+  "@context": "https://ahaywardtvuk.github.io/bblocks-openscience/build/annotated/osc/geodcat-stac-earthcode/workflows/context.jsonld",
   "id": "waterbodies",
   "type": "Feature",
   "geometry": null,
@@ -837,26 +837,26 @@ not accessible at https://osc-staging.earthcode.eox.at/workflows/waterbodies/rec
     dcterms:conformsTo <http://www.opengis.net/spec/ogcapi-records-1/1.0/req/record-core>,
         <https://raw.githubusercontent.com/EOEPCA/metadata-profile/refs/heads/1.0/schemas/application-type-ogc-application-package>,
         <https://stac-extensions.github.io/application/v0.1.0/schema.json> ;
-    rdfs:seeAlso [ dcterms:type "application/json" ;
+    rdfs:seeAlso [ rdfs:label "Open Science Catalog" ;
+            dcterms:type "application/json" ;
+            ns1:relation <http://www.iana.org/assignments/relation/root> ;
+            oa:hasTarget <https://ogc.org/catalog.json> ],
+        [ dcterms:type "application/json" ;
             ns1:relation <http://www.iana.org/assignments/relation/self> ;
             oa:hasTarget <https://esa-earthcode.github.io/open-science-catalog-metadata/workflows/waterbodies/record.json> ],
         [ rdfs:label "Project: OSPD" ;
             dcterms:type "application/json" ;
             ns1:relation <http://www.iana.org/assignments/relation/related> ;
             oa:hasTarget <https://ogc.org/projects/ospd/collection.json> ],
-        [ rdfs:label "Open Science Catalog" ;
-            dcterms:type "application/json" ;
-            ns1:relation <http://www.iana.org/assignments/relation/root> ;
-            oa:hasTarget <https://ogc.org/catalog.json> ],
-        [ rdfs:label "Workflows" ;
-            dcterms:type "application/json" ;
-            ns1:relation <http://www.iana.org/assignments/relation/parent> ;
-            oa:hasTarget <https://ogc.org/demo/catalog.json> ],
         [ rdfs:label "OGC Application Package" ;
             dcterms:language "" ;
             dcterms:type "application/clw+yaml" ;
             ns1:relation <http://www.iana.org/assignments/relation/application> ;
-            oa:hasTarget <https://raw.githubusercontent.com/tjellicoe-tpzuk/eo-workflow-examples/refs/heads/main/water-bodies/water-bodies.cwl> ] .
+            oa:hasTarget <https://raw.githubusercontent.com/tjellicoe-tpzuk/eo-workflow-examples/refs/heads/main/water-bodies/water-bodies.cwl> ],
+        [ rdfs:label "Workflows" ;
+            dcterms:type "application/json" ;
+            ns1:relation <http://www.iana.org/assignments/relation/parent> ;
+            oa:hasTarget <https://ogc.org/demo/catalog.json> ] .
 
 
 ```
@@ -1035,7 +1035,7 @@ Some notes:
 #### jsonld
 ```jsonld
 {
-  "@context": "https://ogcincubator.github.io/bblocks-openscience/build/annotated/osc/geodcat-stac-earthcode/workflows/context.jsonld",
+  "@context": "https://ahaywardtvuk.github.io/bblocks-openscience/build/annotated/osc/geodcat-stac-earthcode/workflows/context.jsonld",
   "id": "waterbodies",
   "type": "Feature",
   "conformsTo": [
@@ -1207,9 +1207,24 @@ Some notes:
     dcterms:conformsTo <http://www.opengis.net/spec/ogcapi-records-1/1.0/req/record-core>,
         <https://raw.githubusercontent.com/EOEPCA/metadata-profile/refs/heads/1.0/schemas/application-type-ogc-application-package>,
         <https://stac-extensions.github.io/application/v0.1.0/schema.json> ;
-    rdfs:seeAlso [ rdfs:label "OGC Application Package" ;
+    rdfs:seeAlso [ rdfs:label "Open Science Catalog" ;
+            dcterms:type "application/json" ;
+            ns1:relation <http://www.iana.org/assignments/relation/root> ;
+            oa:hasTarget <https://example.com/open-science-catalog-metadata/catalog.json> ],
+        [ rdfs:label "OGC Application Package" ;
             dcterms:type "application/cwl+yaml" ;
             ns1:relation <wfdesc:WorkflowDefinition> ;
+            oa:hasTarget <https://raw.githubusercontent.com/tjellicoe-tpzuk/eo-workflow-examples/refs/heads/main/water-bodies/water-bodies.cwl> ],
+        [ rdfs:label "Source Code" ;
+            ns1:relation <http://www.iana.org/assignments/relation/git> ;
+            oa:hasTarget <https://github.com/Terradue/ogc-eo-application-package-hands-on/tree/master/water-bodies> ],
+        [ dcterms:type "application/json" ;
+            ns1:relation <http://www.iana.org/assignments/relation/self> ;
+            oa:hasTarget <https://esa-earthcode.github.io/open-science-catalog-metadata/workflows/waterbodies/record.json> ],
+        [ rdfs:label "OGC Application Package" ;
+            dcterms:language "" ;
+            dcterms:type "application/cwl+yaml" ;
+            ns1:relation <http://www.iana.org/assignments/relation/application> ;
             oa:hasTarget <https://raw.githubusercontent.com/tjellicoe-tpzuk/eo-workflow-examples/refs/heads/main/water-bodies/water-bodies.cwl> ],
         [ rdfs:label "Workflows" ;
             dcterms:type "application/json" ;
@@ -1218,22 +1233,7 @@ Some notes:
         [ rdfs:label "Project: OSPD" ;
             dcterms:type "application/json" ;
             ns1:relation <http://www.iana.org/assignments/relation/related> ;
-            oa:hasTarget <https://example.com/open-science-catalog-metadata/projects/ospd/collection.json> ],
-        [ rdfs:label "Source Code" ;
-            ns1:relation <http://www.iana.org/assignments/relation/git> ;
-            oa:hasTarget <https://github.com/Terradue/ogc-eo-application-package-hands-on/tree/master/water-bodies> ],
-        [ rdfs:label "Open Science Catalog" ;
-            dcterms:type "application/json" ;
-            ns1:relation <http://www.iana.org/assignments/relation/root> ;
-            oa:hasTarget <https://example.com/open-science-catalog-metadata/catalog.json> ],
-        [ dcterms:type "application/json" ;
-            ns1:relation <http://www.iana.org/assignments/relation/self> ;
-            oa:hasTarget <https://esa-earthcode.github.io/open-science-catalog-metadata/workflows/waterbodies/record.json> ],
-        [ rdfs:label "OGC Application Package" ;
-            dcterms:language "" ;
-            dcterms:type "application/cwl+yaml" ;
-            ns1:relation <http://www.iana.org/assignments/relation/application> ;
-            oa:hasTarget <https://raw.githubusercontent.com/tjellicoe-tpzuk/eo-workflow-examples/refs/heads/main/water-bodies/water-bodies.cwl> ] .
+            oa:hasTarget <https://example.com/open-science-catalog-metadata/projects/ospd/collection.json> ] .
 
 
 ```
@@ -1304,7 +1304,7 @@ calculation.
 #### jsonld
 ```jsonld
 {
-  "@context": "https://ogcincubator.github.io/bblocks-openscience/build/annotated/osc/geodcat-stac-earthcode/workflows/context.jsonld",
+  "@context": "https://ahaywardtvuk.github.io/bblocks-openscience/build/annotated/osc/geodcat-stac-earthcode/workflows/context.jsonld",
   "id": "kindgrove-mangrove-biomass-workflow",
   "type": "Feature",
   "geometry": null,
@@ -1407,44 +1407,44 @@ calculation.
 ```ttl
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix geojson: <https://purl.org/geojson/vocab#> .
-@prefix ns1: <http://www.iana.org/assignments/> .
-@prefix ns2: <vcs:> .
-@prefix ns3: <application:> .
+@prefix ns1: <application:> .
+@prefix ns2: <http://www.iana.org/assignments/> .
+@prefix ns3: <vcs:> .
 @prefix oa: <http://www.w3.org/ns/oa#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
 <https://ogc.org/demo/ospd/kindgrove-mangrove-biomass-workflow> a geojson:Feature ;
     dcterms:conformsTo <http://www.opengis.net/spec/ogcapi-records-1/1.0/req/record-core> ;
-    rdfs:seeAlso [ rdfs:label "Open Science Catalog" ;
-            dcterms:type "application/json" ;
-            ns1:relation <http://www.iana.org/assignments/relation/root> ;
-            oa:hasTarget <https://ogc.org/catalog.json> ],
-        [ rdfs:label "KindGrove Mangrove Biomass Workflow" ;
-            ns3:container "True" ;
-            ns3:language "Python" ;
-            ns3:type "cwl-workflow" ;
-            dcterms:type "application/x-cwl" ;
-            ns1:relation <http://www.iana.org/assignments/relation/application> ;
-            oa:hasTarget <https://github.com/starling-foundries/KindGrove/blob/main/mangrove_workflow.cwl> ],
-        [ rdfs:label "Git source repository" ;
-            ns1:relation <http://www.iana.org/assignments/relation/vcs> ;
+    rdfs:seeAlso [ rdfs:label "Git source repository" ;
+            ns2:relation <http://www.iana.org/assignments/relation/vcs> ;
             oa:hasTarget <https://github.com/starling-foundries/KindGrove> ;
-            ns2:branch "main" ;
-            ns2:type "git" ],
-        [ rdfs:label "Project: OSPD" ;
-            dcterms:type "application/json" ;
-            ns1:relation <http://www.iana.org/assignments/relation/related> ;
-            oa:hasTarget <https://ogc.org/projects/ospd/collection.json> ],
+            ns3:branch "main" ;
+            ns3:type "git" ],
         [ rdfs:label "Theme: Land" ;
             dcterms:type "application/json" ;
-            ns1:relation <http://www.iana.org/assignments/relation/related> ;
+            ns2:relation <http://www.iana.org/assignments/relation/related> ;
             oa:hasTarget <https://ogc.org/themes/land/catalog.json> ],
+        [ rdfs:label "Open Science Catalog" ;
+            dcterms:type "application/json" ;
+            ns2:relation <http://www.iana.org/assignments/relation/root> ;
+            oa:hasTarget <https://ogc.org/catalog.json> ],
         [ rdfs:label "Workflows" ;
             dcterms:type "application/json" ;
-            ns1:relation <http://www.iana.org/assignments/relation/parent> ;
+            ns2:relation <http://www.iana.org/assignments/relation/parent> ;
             oa:hasTarget <https://ogc.org/demo/catalog.json> ],
+        [ rdfs:label "KindGrove Mangrove Biomass Workflow" ;
+            ns1:container "True" ;
+            ns1:language "Python" ;
+            ns1:type "cwl-workflow" ;
+            dcterms:type "application/x-cwl" ;
+            ns2:relation <http://www.iana.org/assignments/relation/application> ;
+            oa:hasTarget <https://github.com/starling-foundries/KindGrove/blob/main/mangrove_workflow.cwl> ],
+        [ rdfs:label "Project: OSPD" ;
+            dcterms:type "application/json" ;
+            ns2:relation <http://www.iana.org/assignments/relation/related> ;
+            oa:hasTarget <https://ogc.org/projects/ospd/collection.json> ],
         [ dcterms:type "application/json" ;
-            ns1:relation <http://www.iana.org/assignments/relation/self> ;
+            ns2:relation <http://www.iana.org/assignments/relation/self> ;
             oa:hasTarget <https://ogc.org/demo/kindgrove-mangrove-biomass-workflow/record.json> ] .
 
 
@@ -1520,7 +1520,7 @@ An automated, reproducible workflow for calculating the Coastal Vulnerability In
 #### jsonld
 ```jsonld
 {
-  "@context": "https://ogcincubator.github.io/bblocks-openscience/build/annotated/osc/geodcat-stac-earthcode/workflows/context.jsonld",
+  "@context": "https://ahaywardtvuk.github.io/bblocks-openscience/build/annotated/osc/geodcat-stac-earthcode/workflows/context.jsonld",
   "id": "cvi-workflow",
   "type": "Feature",
   "geometry": null,
@@ -1628,8 +1628,8 @@ An automated, reproducible workflow for calculating the Coastal Vulnerability In
 ```ttl
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix geojson: <https://purl.org/geojson/vocab#> .
-@prefix ns1: <application:> .
-@prefix ns2: <http://www.iana.org/assignments/> .
+@prefix ns1: <http://www.iana.org/assignments/> .
+@prefix ns2: <application:> .
 @prefix ns3: <vcs:> .
 @prefix oa: <http://www.w3.org/ns/oa#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -1638,37 +1638,37 @@ An automated, reproducible workflow for calculating the Coastal Vulnerability In
 <https://ogc.org/demo/ospd/cvi-workflow> a geojson:Feature ;
     dcterms:conformsTo <http://www.opengis.net/spec/ogcapi-records-1/1.0/req/record-core>,
         <https://stac-extensions.github.io/osc/v1.0.0/schema.json> ;
-    rdfs:seeAlso [ rdfs:label "Theme: Oceans" ;
+    rdfs:seeAlso [ rdfs:label "Workflows" ;
             dcterms:type "application/json" ;
-            ns2:relation <http://www.iana.org/assignments/relation/related> ;
+            ns1:relation <http://www.iana.org/assignments/relation/parent> ;
+            oa:hasTarget <https://ogc.org/demo/catalog.json> ],
+        [ dcterms:type "application/json" ;
+            ns1:relation <http://www.iana.org/assignments/relation/self> ;
+            oa:hasTarget <https://ogc.org/demo/ospd/cvi-workflow/record.json> ],
+        [ rdfs:label "Project: OSPD" ;
+            dcterms:type "application/json" ;
+            ns1:relation <http://www.iana.org/assignments/relation/related> ;
+            oa:hasTarget <https://ogc.org/projects/ospd/collection.json> ],
+        [ rdfs:label "Open Science Catalog" ;
+            dcterms:type "application/json" ;
+            ns1:relation <http://www.iana.org/assignments/relation/root> ;
+            oa:hasTarget <https://ogc.org/catalog.json> ],
+        [ rdfs:label "Theme: Oceans" ;
+            dcterms:type "application/json" ;
+            ns1:relation <http://www.iana.org/assignments/relation/related> ;
             oa:hasTarget <https://ogc.org/themes/oceans/catalog.json> ],
         [ rdfs:label "Git source repository" ;
-            ns2:relation <http://www.iana.org/assignments/relation/vcs> ;
+            ns1:relation <http://www.iana.org/assignments/relation/vcs> ;
             oa:hasTarget <https://github.com/hartis-org/cvi-workflow> ;
             ns3:branch "main" ;
             ns3:type "git" ],
-        [ rdfs:label "Project: OSPD" ;
-            dcterms:type "application/json" ;
-            ns2:relation <http://www.iana.org/assignments/relation/related> ;
-            oa:hasTarget <https://ogc.org/projects/ospd/collection.json> ],
         [ rdfs:label "Coastal Vulnerability Index (CVI) Workflow" ;
-            ns1:container true ;
-            ns1:language "Python" ;
-            ns1:type "cwl-workflow" ;
+            ns2:container true ;
+            ns2:language "Python" ;
+            ns2:type "cwl-workflow" ;
             dcterms:type "application/x-cwl" ;
-            ns2:relation <http://www.iana.org/assignments/relation/application> ;
-            oa:hasTarget <https://github.com/hartis-org/cvi-workflow/blob/main/cvi_workflow.cwl> ],
-        [ rdfs:label "Workflows" ;
-            dcterms:type "application/json" ;
-            ns2:relation <http://www.iana.org/assignments/relation/parent> ;
-            oa:hasTarget <https://ogc.org/demo/catalog.json> ],
-        [ rdfs:label "Open Science Catalog" ;
-            dcterms:type "application/json" ;
-            ns2:relation <http://www.iana.org/assignments/relation/root> ;
-            oa:hasTarget <https://ogc.org/catalog.json> ],
-        [ dcterms:type "application/json" ;
-            ns2:relation <http://www.iana.org/assignments/relation/self> ;
-            oa:hasTarget <https://ogc.org/demo/ospd/cvi-workflow/record.json> ] .
+            ns1:relation <http://www.iana.org/assignments/relation/application> ;
+            oa:hasTarget <https://github.com/hartis-org/cvi-workflow/blob/main/cvi_workflow.cwl> ] .
 
 
 ```
@@ -1747,7 +1747,7 @@ ML4Floods inference for flood extent estimation using a pre-trained model on Sen
 #### jsonld
 ```jsonld
 {
-  "@context": "https://ogcincubator.github.io/bblocks-openscience/build/annotated/osc/geodcat-stac-earthcode/workflows/context.jsonld",
+  "@context": "https://ahaywardtvuk.github.io/bblocks-openscience/build/annotated/osc/geodcat-stac-earthcode/workflows/context.jsonld",
   "id": "app-ml4floods",
   "type": "Feature",
   "geometry": null,
@@ -1858,9 +1858,9 @@ ML4Floods inference for flood extent estimation using a pre-trained model on Sen
 ```ttl
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix geojson: <https://purl.org/geojson/vocab#> .
-@prefix ns1: <http://www.iana.org/assignments/> .
-@prefix ns2: <application:> .
-@prefix ns3: <vcs:> .
+@prefix ns1: <vcs:> .
+@prefix ns2: <http://www.iana.org/assignments/> .
+@prefix ns3: <application:> .
 @prefix oa: <http://www.w3.org/ns/oa#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
@@ -1871,37 +1871,37 @@ ML4Floods inference for flood extent estimation using a pre-trained model on Sen
         <https://stac-extensions.github.io/osc/v1.0.0/schema.json>,
         <https://stac-extensions.github.io/version/v1.0.0/schema.json>,
         <https://stacspec.org/STAC-api.html> ;
-    rdfs:seeAlso [ rdfs:label "Workflows" ;
+    rdfs:seeAlso [ rdfs:label "Theme: Land" ;
             dcterms:type "application/json" ;
-            ns1:relation <http://www.iana.org/assignments/relation/parent> ;
-            oa:hasTarget <https://ogc.org/demo/catalog.json> ],
-        [ rdfs:label "Project: OSPD" ;
-            dcterms:type "application/json" ;
-            ns1:relation <http://www.iana.org/assignments/relation/related> ;
-            oa:hasTarget <https://ogc.org/projects/ospd/collection.json> ],
-        [ rdfs:label "ML4Floods Inference Workflow" ;
-            ns2:container true ;
-            ns2:language "Python" ;
-            ns2:type "cwl-workflow" ;
-            dcterms:type "application/cwl" ;
-            ns1:relation <http://www.iana.org/assignments/relation/application> ;
-            oa:hasTarget <https://github.com/eoap/app-ml4floods/blob/main/cwl-workflow/app-ml4floods.cwl> ],
-        [ dcterms:type "application/json" ;
-            ns1:relation <http://www.iana.org/assignments/relation/self> ;
-            oa:hasTarget <https://ogc.org/demo/workflows/app-ml4floods/record.json> ],
-        [ rdfs:label "Theme: Land" ;
-            dcterms:type "application/json" ;
-            ns1:relation <http://www.iana.org/assignments/relation/related> ;
+            ns2:relation <http://www.iana.org/assignments/relation/related> ;
             oa:hasTarget <https://ogc.org/themes/land/catalog.json> ],
+        [ dcterms:type "application/json" ;
+            ns2:relation <http://www.iana.org/assignments/relation/self> ;
+            oa:hasTarget <https://ogc.org/demo/workflows/app-ml4floods/record.json> ],
         [ rdfs:label "Open Science Catalog" ;
             dcterms:type "application/json" ;
-            ns1:relation <http://www.iana.org/assignments/relation/root> ;
+            ns2:relation <http://www.iana.org/assignments/relation/root> ;
             oa:hasTarget <https://ogc.org/catalog.json> ],
+        [ rdfs:label "ML4Floods Inference Workflow" ;
+            ns3:container true ;
+            ns3:language "Python" ;
+            ns3:type "cwl-workflow" ;
+            dcterms:type "application/cwl" ;
+            ns2:relation <http://www.iana.org/assignments/relation/application> ;
+            oa:hasTarget <https://github.com/eoap/app-ml4floods/blob/main/cwl-workflow/app-ml4floods.cwl> ],
         [ rdfs:label "Git source repository" ;
-            ns1:relation <http://www.iana.org/assignments/relation/vcs> ;
+            ns2:relation <http://www.iana.org/assignments/relation/vcs> ;
             oa:hasTarget <https://github.com/eoap/app-ml4floods> ;
-            ns3:branch "main" ;
-            ns3:type "git" ] .
+            ns1:branch "main" ;
+            ns1:type "git" ],
+        [ rdfs:label "Project: OSPD" ;
+            dcterms:type "application/json" ;
+            ns2:relation <http://www.iana.org/assignments/relation/related> ;
+            oa:hasTarget <https://ogc.org/projects/ospd/collection.json> ],
+        [ rdfs:label "Workflows" ;
+            dcterms:type "application/json" ;
+            ns2:relation <http://www.iana.org/assignments/relation/parent> ;
+            oa:hasTarget <https://ogc.org/demo/catalog.json> ] .
 
 
 ```
@@ -1925,7 +1925,7 @@ properties:
     - osc:project
     properties:
       osc:project:
-        $ref: https://ogcincubator.github.io/bblocks-openscience/build/annotated/osc/geodcat-stac-earthcode/common/schema.yaml#/$defs/osc:project
+        $ref: https://ahaywardtvuk.github.io/bblocks-openscience/build/annotated/osc/geodcat-stac-earthcode/common/schema.yaml#/$defs/osc:project
       wfdesc:hasInput:
         type: object
         additionalProperties:
@@ -1946,14 +1946,14 @@ properties:
             not:
               enum:
               - via
-      - $ref: https://ogcincubator.github.io/bblocks-openscience/build/annotated/osc/geodcat-stac-earthcode/common/schema.yaml#/$defs/via_links
+      - $ref: https://ahaywardtvuk.github.io/bblocks-openscience/build/annotated/osc/geodcat-stac-earthcode/common/schema.yaml#/$defs/via_links
 
 ```
 
 Links to the schema:
 
-* YAML version: [schema.yaml](https://ogcincubator.github.io/bblocks-openscience/build/annotated/osc/geodcat-stac-earthcode/workflows/schema.json)
-* JSON version: [schema.json](https://ogcincubator.github.io/bblocks-openscience/build/annotated/osc/geodcat-stac-earthcode/workflows/schema.yaml)
+* YAML version: [schema.yaml](https://ahaywardtvuk.github.io/bblocks-openscience/build/annotated/osc/geodcat-stac-earthcode/workflows/schema.json)
+* JSON version: [schema.json](https://ahaywardtvuk.github.io/bblocks-openscience/build/annotated/osc/geodcat-stac-earthcode/workflows/schema.yaml)
 
 
 # JSON-LD Context
@@ -2824,7 +2824,7 @@ Links to the schema:
 ```
 
 You can find the full JSON-LD context here:
-[context.jsonld](https://ogcincubator.github.io/bblocks-openscience/build/annotated/osc/geodcat-stac-earthcode/workflows/context.jsonld)
+[context.jsonld](https://ahaywardtvuk.github.io/bblocks-openscience/build/annotated/osc/geodcat-stac-earthcode/workflows/context.jsonld)
 
 ## Sources
 
@@ -2834,6 +2834,6 @@ You can find the full JSON-LD context here:
 
 The source code for this Building Block can be found in the following repository:
 
-* URL: [https://github.com/ogcincubator/bblocks-openscience](https://github.com/ogcincubator/bblocks-openscience)
+* URL: [https://github.com/ahaywardtvuk/bblocks-openscience](https://github.com/ahaywardtvuk/bblocks-openscience)
 * Path: `_sources/geodcat-stac-earthcode/workflows`
 
